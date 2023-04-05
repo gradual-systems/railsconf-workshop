@@ -60,7 +60,7 @@ bin/packs move packs/admin \
   app/services/admin \
   app/validators/admin \
   app/views/admin \
-  app/workers/admin \
+  app/workers/admin
 
 find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features || echo "\n\n\nSpec execution failed because packs directory is being ignored by Rails"
 
@@ -99,13 +99,20 @@ echo " Not many violations in the root, YIKES!! Lots of violations in the admin.
 read -n 1 -p "Press any key to continue"
 echo ""
 
+open package_todo.yml
+open packs/admin/package_todo.yml
+
+
+
+
+
 echo "\n\n\nLet's accept that the admin package depends on the root package"
 read -n 1 -p "Press any key to continue"
 echo ""
 
-echo "\n\n\n
+echo "
 dependencies:
-  - .
+- .
 " >> packs/admin/package.yml
 
 bin/packwerk update
@@ -137,3 +144,26 @@ bin/packs move packs/admin \
   app/controllers/api/v2/admin \
 
 bin/packwerk update
+
+open package_todo.yml
+
+
+
+
+
+echo "\n\n\nLet's see if can't move the remaining violation causing files into the root app..."
+read -n 1 -p "Press any key to continue"
+echo ""
+
+bin/packs move . \
+  packs/admin/app/workers/admin/account_deletion_worker.rb \
+  packs/admin/app/models/admin/action_log.rb \
+  packs/admin/app/models/admin/import.rb \
+  packs/admin/app/workers/admin/suspension_worker.rb \
+  packs/admin/app/workers/admin/unsuspension_worker.rb
+
+bin/packwerk update
+
+echo "If there are no more package_todo.yml files, we're good"
+
+find . -iname "package_todo.yml"
