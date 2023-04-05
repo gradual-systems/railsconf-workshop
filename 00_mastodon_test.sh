@@ -1,12 +1,25 @@
 
 set -e
 
+if [ "$1" = "ni" ]; then
+    interactive=false
+else
+    interactive=true
+fi
+
+$interactive || echo "Script in non-interactive mode"
+$interactive && echo "Script in interactive mode"
+
+
+
+
+
 echo "\n\n\n################################################################################"
 echo "################################################################################"
 echo "################################################################################"
 echo "\nSCRIPT 00: Installing mastodon + workshop dependencies."
 echo "Also, verifying that the mastodon specs can run successfully"
-read -n 1 -p "Press any key to continue"
+$interactive && read -n 1 -p "Press any key to continue"
 echo ""
 
 brew install gnu-sed libidn libpq postgresql redis yarn ffmpeg imagemagick
@@ -50,4 +63,4 @@ RAILS_ENV=development ./bin/rails assets:precompile
 # RAILS_ENV=test NODE_ENV=tests ./bin/rails assets:precompile
 cp public/packs/manifest.json public/packs-test/manifest.json 
 
-bundle exec rspec spec/controllers/about_controller_spec.rb
+find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features

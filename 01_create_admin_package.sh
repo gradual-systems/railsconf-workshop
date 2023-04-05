@@ -1,29 +1,33 @@
 
 set -e
 
+if [ "$1" = "ni" ]; then
+    interactive=false
+else
+    interactive=true
+fi
+
+$interactive || echo "Script in non-interactive mode"
+$interactive && echo "Script in interactive mode"
+
+
+
+
+
 echo "\n\n\n################################################################################"
 echo "################################################################################"
 echo "################################################################################"
 echo "\nSCRIPT 01: Extracting an admin package within the mastodon app"
-read -n 1 -p "Press any key to continue"
+$interactive && read -n 1 -p "Press any key to continue"
 echo ""
 
-
-
-
-
-echo "\n\n\nRunning some tests against a PRISTINE version of MASTODON"
-read -n 1 -p "Press any key to continue"
-echo ""
-
-find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
 
 
 
 
 
 echo "\n\n\nMoving admin code (identified by anything in a app/*/admin folder) into a pack and running tests"
-read -n 1 -p "Press any key to continue"
+$interactive && read -n 1 -p "Press any key to continue"
 echo ""
 
 gsed '/use_packs/d' Gemfile
@@ -69,7 +73,7 @@ find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features |
 
 
 echo "\n\n\nInstalling packs-rails to make Rails pick up the packs directory"
-read -n 1 -p "Press any key to continue"
+$interactive && read -n 1 -p "Press any key to continue"
 echo ""
 
 echo "\n\n\n
@@ -85,7 +89,7 @@ find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
 
 
 echo "\n\n\nTESTS PASS!!! Let's see what packwerk says"
-read -n 1 -p "Press any key to continue"
+$interactive && read -n 1 -p "Press any key to continue"
 echo ""
 
 bin/packwerk update
@@ -96,18 +100,18 @@ bin/packwerk update
 
 echo "\n\n\nCheck out package_todo.yml and packs/admin/package_todo.yml"
 echo " Not many violations in the root, YIKES!! Lots of violations in the admin... which is expected"
-read -n 1 -p "Press any key to continue"
+$interactive && read -n 1 -p "Press any key to continue"
 echo ""
 
-open package_todo.yml
-open packs/admin/package_todo.yml
+$interactive && open package_todo.yml
+$interactive && open packs/admin/package_todo.yml
 
 
 
 
 
 echo "\n\n\nLet's accept that the admin package depends on the root package"
-read -n 1 -p "Press any key to continue"
+$interactive && read -n 1 -p "Press any key to continue"
 echo ""
 
 echo "
@@ -122,13 +126,13 @@ bin/packwerk update
 
 
 echo "\n\n\nLet's take a closer look at the root package_todo.yml"
-read -n 1 -p "Press any key to continue"
+$interactive && read -n 1 -p "Press any key to continue"
 echo ""
 
-open package_todo.yml
+$interactive && open package_todo.yml
 
 echo "\n\n\nThere is a bunch of admin code still in the root pack (In those API folders)"
-read -n 1 -p "Press any key to continue"
+$interactive && read -n 1 -p "Press any key to continue"
 echo ""
 
 
@@ -136,7 +140,7 @@ echo ""
 
 
 echo "\n\n\nMove the API admin code into the admin package and update package todos"
-read -n 1 -p "Press any key to continue"
+$interactive && read -n 1 -p "Press any key to continue"
 echo ""
 
 bin/packs move packs/admin \
@@ -145,14 +149,14 @@ bin/packs move packs/admin \
 
 bin/packwerk update
 
-open package_todo.yml
+$interactive && open package_todo.yml
 
 
 
 
 
 echo "\n\n\nLet's see if can't move the remaining violation causing files into the root app..."
-read -n 1 -p "Press any key to continue"
+$interactive && read -n 1 -p "Press any key to continue"
 echo ""
 
 bin/packs move . \
