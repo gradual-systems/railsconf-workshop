@@ -25,6 +25,9 @@ bin/packs create packs/user_facing_app
 
 bin/packs move packs/user_facing_app app
 
+gsed -i "s/'app'/'packs', 'user_facing_app', 'app'/" packs/user_facing_app/app/helpers/branding_helper.rb
+
+
 bin/packwerk update
 
 find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
