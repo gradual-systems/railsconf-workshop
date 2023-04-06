@@ -28,6 +28,11 @@ bin/packs move packs/user_facing_app app
 gsed -i "s/'app'/'packs', 'user_facing_app', 'app'/" packs/user_facing_app/app/helpers/branding_helper.rb
 gsed -i "s/'app'/'packs', 'user_facing_app', 'app'/" packs/user_facing_app/app/validators/reaction_validator.rb
 
+gsed -i 's/- \./- packs\/user_facing_app/' packs/admin/package.yml
+echo "
+dependencies:
+- packs/user_facing_app
+" >> package.yml
 
 bin/packwerk update
 
