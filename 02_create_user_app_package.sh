@@ -26,6 +26,7 @@ bin/packs create packs/user_facing_app
 bin/packs move packs/user_facing_app app
 
 gsed -i "s/'app'/'packs', 'user_facing_app', 'app'/" packs/user_facing_app/app/helpers/branding_helper.rb
+gsed -i "s/'app'/'packs', 'user_facing_app', 'app'/" packs/user_facing_app/app/validators/reaction_validator.rb
 
 
 bin/packwerk update
