@@ -82,6 +82,13 @@ gem 'packs-rails'
 
 bundle
 
+echo "
+--require packs/rails/rspec
+--color
+--require spec_helper
+--format Fuubar
+" > .rspec
+
 find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
 
 
