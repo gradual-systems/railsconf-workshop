@@ -24,8 +24,10 @@ echo ""
 echo "Installing system dependencies"
 brew install    rbenv ruby-build gnu-sed libidn libpq postgresql redis yarn ffmpeg imagemagick
 
-echo "Using rbenv to set ruby version to 3.2.1"
-rbenv global 3.2.1
+rbenv install 3.2.2
+
+echo "Using rbenv to set ruby version to 3.2.2"
+rbenv global 3.2.2
 
 echo "Git checckout, clean, and pull"
 git checkout .
