@@ -21,11 +21,11 @@ echo "Also, verifying that the mastodon specs can run successfully"
 $interactive && read -n 1 -p "Press any key to continue"
 echo ""
 
+echo "Installing system dependencies"
+brew install    rbenv ruby-build gnu-sed libidn libpq postgresql redis yarn ffmpeg imagemagick
+
 echo "Using rbenv to set ruby version to 3.2.1"
 rbenv global 3.2.1
-
-echo "Installing system dependencies"
-brew install gnu-sed libidn libpq postgresql redis yarn ffmpeg imagemagick
 
 echo "Git checckout, clean, and pull"
 git checkout .
