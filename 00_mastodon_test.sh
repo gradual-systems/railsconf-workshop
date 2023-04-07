@@ -17,7 +17,7 @@ puts () {
   echo $1 | sed -e 's/^/    /'
 }
 
-if [ "$1" = "ni" ]; then
+if [ "$1" = "NI" ] || [ "$NI" = "y" ]; then
     interactive=false
 else
     interactive=true
