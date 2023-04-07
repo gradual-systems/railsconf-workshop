@@ -1,6 +1,22 @@
 
 set -e
 
+puts_h1 () {
+    echo "  \n\n\n################################################################################"
+    echo "### " $1
+    echo "################################################################################"
+    echo ""
+}
+
+puts_h2 () {
+    puts ""
+    echo $1 | sed -e 's/^/*** /'
+}
+
+puts () {
+  echo $1 | sed -e 's/^/    /'
+}
+
 if [ "$1" = "ni" ]; then
     interactive=false
 else
@@ -14,27 +30,29 @@ $interactive && echo "Script in interactive mode"
 
 
 
-echo "\n\n\n################################################################################"
-echo "################################################################################"
-echo "################################################################################"
-echo "\nSCRIPT 01: Extracting an admin package within the mastodon app"
+puts_h1 "SCRIPT 01: Extracting an admin package within the mastodon app"
+puts ""
+
+
+
+
+
+
+puts_h2 "Moving admin code (identified by anything in a app/*/admin folder) into a pack and running tests"
 $interactive && read -n 1 -p "Press any key to continue"
-echo ""
-
-
-
-
-
-
-echo "\n\n\nMoving admin code (identified by anything in a app/*/admin folder) into a pack and running tests"
-$interactive && read -n 1 -p "Press any key to continue"
-echo ""
+puts ""
 
 gsed '/use_packs/d' Gemfile
 
-echo "\n\n\n
+echo "
 gem 'use_packs'
+gem 'visualize_packwerk', path: '../visualize_packwerk'
 " >> Gemfile
+
+echo "pack_paths:
+  - packs/*
+  - .
+" > packs.yml
 
 bundle
 
@@ -66,17 +84,17 @@ bin/packs move packs/admin \
   app/views/admin \
   app/workers/admin
 
-find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features || echo "\n\n\nSpec execution failed because packs directory is being ignored by Rails"
+find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features || puts_h2 "Spec execution failed because packs directory is being ignored by Rails"
 
 
 
 
 
-echo "\n\n\nInstalling packs-rails to make Rails pick up the packs directory"
+puts_h2 "Installing packs-rails to make Rails pick up the packs directory"
 $interactive && read -n 1 -p "Press any key to continue"
-echo ""
+puts ""
 
-echo "\n\n\n
+echo "
 gem 'packs-rails'
 " >> Gemfile
 
@@ -95,20 +113,17 @@ find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
 
 
 
-echo "\n\n\nTESTS PASS!!! Let's see what packwerk says"
-$interactive && read -n 1 -p "Press any key to continue"
-echo ""
+echo "TESTS PASS!!! Let's see what packwerk says"
+$intputs_h2eractive && read -n 1 -p "Press any key to continue"
+puts ""
 
 bin/packwerk update
 
 
-
-
-
-echo "\n\n\nCheck out package_todo.yml and packs/admin/package_todo.yml"
-echo " Not many violations in the root, YIKES!! Lots of violations in the admin... which is expected"
+puts_h2 "Check out package_todo.yml and packs/admin/package_todo.yml"
+puts "Not many violations in the root, YIKES!! Lots of violations in the admin... which is expected"
 $interactive && read -n 1 -p "Press any key to continue"
-echo ""
+puts ""
 
 $interactive && open package_todo.yml
 $interactive && open packs/admin/package_todo.yml
@@ -117,9 +132,9 @@ $interactive && open packs/admin/package_todo.yml
 
 
 
-echo "\n\n\nLet's accept that the admin package depends on the root package"
+puts_h2 "Let's accept that the admin package depends on the root package"
 $interactive && read -n 1 -p "Press any key to continue"
-echo ""
+puts ""
 
 echo "
 dependencies:
@@ -130,25 +145,23 @@ bin/packwerk update
 
 
 
-
-
-echo "\n\n\nLet's take a closer look at the root package_todo.yml"
+puts_h2 "Let's take a closer look at the root package_todo.yml"
 $interactive && read -n 1 -p "Press any key to continue"
-echo ""
+puts ""
 
 $interactive && open package_todo.yml
 
-echo "\n\n\nThere is a bunch of admin code still in the root pack (In those API folders)"
+puts_h2 "There is a bunch of admin code still in the root pack (In those API folders)"
 $interactive && read -n 1 -p "Press any key to continue"
-echo ""
+puts ""
 
 
 
 
 
-echo "\n\n\nMove the API admin code into the admin package and update package todos"
+puts_h2 "Move the API admin code into the admin package and update package todos"
 $interactive && read -n 1 -p "Press any key to continue"
-echo ""
+puts ""
 
 bin/packs move packs/admin \
   app/controllers/api/v1/admin \
@@ -162,11 +175,13 @@ $interactive && open package_todo.yml
 
 
 
-echo "\n\n\nLet's see if can't move the remaining violation causing files into the root app..."
+puts_h2 "Let's see if can't move the remaining violation causing files into a pack and avoid violations..."
 $interactive && read -n 1 -p "Press any key to continue"
-echo ""
+puts ""
 
-bin/packs move . \
+bin/packs create packs/messy_middle
+
+bin/packs move packs/messy_middle \
   packs/admin/app/workers/admin/account_deletion_worker.rb \
   packs/admin/app/models/admin/action_log.rb \
   packs/admin/app/models/admin/import.rb \

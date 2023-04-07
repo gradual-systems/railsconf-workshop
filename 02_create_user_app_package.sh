@@ -1,6 +1,22 @@
 
 set -e
 
+puts_h1 () {
+    echo "  \n\n\n################################################################################"
+    echo "### " $1
+    echo "################################################################################"
+    echo ""
+}
+
+puts_h2 () {
+    puts ""
+    echo $1 | sed -e 's/^/*** /'
+}
+
+puts () {
+  echo $1 | sed -e 's/^/    /'
+}
+
 if [ "$1" = "ni" ]; then
     interactive=false
 else
@@ -14,12 +30,8 @@ $interactive && echo "Script in interactive mode"
 
 
 
-echo "\n\n\n################################################################################"
-echo "################################################################################"
-echo "################################################################################"
-echo "\nSCRIPT 02: Move all code into a user faching app package"
-$interactive && read -n 1 -p "Press any key to continue"
-echo ""
+puts_h1 "SCRIPT 02: Move all code into a user faching app package"
+puts ""
 
 bin/packs create packs/user_facing_app
 
@@ -43,6 +55,6 @@ find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
 
 
 
-echo "If there are no more package_todo.yml files, we're good"
+puts_h2 "If there are no more package_todo.yml files, we're good"
 
 find . -iname "package_todo.yml"

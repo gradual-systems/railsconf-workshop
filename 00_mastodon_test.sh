@@ -1,41 +1,53 @@
 
 set -e
 
+puts_h1 () {
+    echo "\n\n\n################################################################################"
+    echo "### " $1
+    echo "################################################################################"
+    echo ""
+}
+
+puts_h2 () {
+    echo ""
+    echo $1 | sed -e 's/^/*** /'
+}
+
+puts () {
+  echo $1 | sed -e 's/^/    /'
+}
+
 if [ "$1" = "ni" ]; then
     interactive=false
 else
     interactive=true
 fi
 
-$interactive || echo "Script in non-interactive mode"
-$interactive && echo "Script in interactive mode"
+$interactive || puts_h2 "Script in non-interactive mode"
+$interactive && puts_h2 "Script in interactive mode"
 
 
 
+puts_h1 "SCRIPT 00: Installing mastodon + workshop dependencies."
+puts "Also, verifying that the mastodon specs can run successfully"
+puts ""
 
-echo "\n\n\n################################################################################"
-echo "################################################################################"
-echo "################################################################################"
-echo "\nSCRIPT 00: Installing mastodon + workshop dependencies."
-echo "Also, verifying that the mastodon specs can run successfully"
-$interactive && read -n 1 -p "Press any key to continue"
-echo ""
-
-echo "Installing system dependencies"
+puts_h2 "Installing system dependencies"
 brew install    rbenv ruby-build gnu-sed libidn libpq postgresql redis yarn ffmpeg imagemagick
 
-rbenv install 3.2.2
+# puts_h2 "Using nvm to set node version to 19"
+# nvm use 19
 
-echo "Using rbenv to set ruby version to 3.2.2"
+puts_h2 "Using rbenv to set ruby version to 3.2.2"
 rbenv global 3.2.2
 
-echo "Git checckout, clean, and pull"
+puts_h2 "Git checkout, clean, and pull"
 git checkout .
 git clean -fd
 
 git pull --rebase
 
-echo "Installing bundle"
+puts_h2 "Installing bundle"
 bundle
 
 bundle binstubs bundler --force
@@ -45,26 +57,25 @@ bundle binstubs bundler --force
 # From https://github.com/mastodon/mastodon/blob/main/.devcontainer/post-create.sh
 # export NODE_OPTIONS=--openssl-legacy-provider
 
-echo "Fetch Javascript dependencies"
+puts_h2 "Fetch Javascript dependencies"
 yarn --frozen-lockfile
 
-echo "Make Gemfile.lock pristine again"
+puts_h2 "Make Gemfile.lock pristine again"
 git checkout -- Gemfile.lock
 
+puts_h2 "[re]create, migrate, and seed the test database"
 RAILS_ENV=test ./bin/rails db:drop
-
-# [re]create, migrate, and seed the test database
 RAILS_ENV=test ./bin/rails db:setup
 
+puts_h2 "[re]create, migrate, and seed the development database"
 RAILS_ENV=development ./bin/rails db:drop
-
-# [re]create, migrate, and seed the development database
 RAILS_ENV=development ./bin/rails db:setup
 
-# Precompile assets for development
+puts_h2 "Precompile assets for development"
 RAILS_ENV=development ./bin/rails assets:precompile
 
-# Precompile assets for test
+puts_h2 "Precompile assets for test"
+# Copying the dev file seems to work in more cases then precompiling in test env
 # RAILS_ENV=test NODE_ENV=tests ./bin/rails assets:precompile
 cp public/packs/manifest.json public/packs-test/manifest.json 
 
