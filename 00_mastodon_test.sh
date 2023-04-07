@@ -1,4 +1,3 @@
-
 set -e
 
 puts_h1 () {
@@ -33,15 +32,16 @@ puts "Also, verifying that the mastodon specs can run successfully"
 puts ""
 
 puts_h2 "Installing system dependencies"
-brew install    rbenv ruby-build gnu-sed libidn libpq postgresql redis yarn ffmpeg imagemagick
+brew install    gnu-sed libidn libpq postgresql redis yarn ffmpeg imagemagick
 
 puts_h2 "Using nvm to set node version to 19"
 export NVM_DIR=$HOME/.nvm;
 source $NVM_DIR/nvm.sh;
-nvm use 19
+nvm use 19 || nvm install 19 && nvm use 19 
 
 puts_h2 "Using rbenv to set ruby version to 3.2.2"
-rbenv global 3.2.2
+export PATH="$HOME/.rbenv/shims:$PATH"
+rbenv local 3.2.2 || rbenv install 3.2.2 && rbenv local 3.2.2 
 
 puts_h2 "Git checkout, clean, and pull"
 git checkout .
