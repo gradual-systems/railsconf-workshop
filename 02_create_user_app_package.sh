@@ -31,6 +31,7 @@ $interactive && echo "Script in interactive mode"
 
 
 puts_h1 "SCRIPT 02: Move all code into a user facing app package"
+$interactive && read -n 1 -p "Press any key to continue"
 puts ""
 
 bin/packs create packs/user_facing_app

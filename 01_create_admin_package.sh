@@ -31,6 +31,7 @@ $interactive && echo "Script in interactive mode"
 
 
 puts_h1 "SCRIPT 01: Extracting an admin package within the mastodon app"
+$interactive && read -n 1 -p "Press any key to continue"
 puts ""
 
 

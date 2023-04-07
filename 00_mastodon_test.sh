@@ -29,6 +29,7 @@ $interactive && puts_h2 "Script in interactive mode"
 
 puts_h1 "SCRIPT 00: Installing mastodon + workshop dependencies."
 puts "Also, verifying that the mastodon specs can run successfully"
+$interactive && read -n 1 -p "Press any key to continue"
 puts ""
 
 puts_h2 "Installing system dependencies"
