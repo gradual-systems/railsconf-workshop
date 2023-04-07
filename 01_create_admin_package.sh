@@ -122,14 +122,17 @@ bin/packwerk update
 echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
 mv packwerk.png ../01-01_admin_extracted.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01-01_admin_extracted_package_todo.yml
+$interactive && open ../01-01_admin_extracted.png
+
+
+
+
 
 puts_h2 "Check out package_todo.yml and packs/admin/package_todo.yml"
 puts "Not many violations in the root, YIKES!! Lots of violations in the admin... which is expected"
 $interactive && read -n 1 -p "Press any key to continue"
 puts ""
 
-$interactive && open package_todo.yml
-$interactive && open packs/admin/package_todo.yml
 
 
 
@@ -149,7 +152,7 @@ bin/packwerk update
 echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
 mv packwerk.png ../01-02_admin_depending_on_root.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01-02_admin_depending_on_root_package_todo.yml
-
+../01-02_admin_depending_on_root.png
 
 puts_h2 "Let's take a closer look at the root package_todo.yml"
 $interactive && read -n 1 -p "Press any key to continue"
@@ -178,8 +181,7 @@ bin/packwerk update
 echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
 mv packwerk.png ../01-03_move_more_into_admin.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01-03_move_more_into_admin_package_todo.yml
-
-$interactive && open package_todo.yml
+$interactive && open ../01-03_move_more_into_admin.png
 
 
 
@@ -203,8 +205,5 @@ bin/packwerk update
 echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
 mv packwerk.png ../01-04_extracted_messy_middle.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01-04_extracted_messy_middle_package_todo.yml
+$interactive && open ../01-04_extracted_messy_middle.png
 
-
-echo "If there are no more package_todo.yml files, we're good"
-
-find . -iname "package_todo.yml"
