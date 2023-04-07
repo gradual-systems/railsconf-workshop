@@ -169,14 +169,7 @@ $interactive && open package_todo.yml
 
 
 puts_h2 "There is a bunch of admin code still in the root pack (In those API folders)"
-$interactive && read -n 1 -p "Press any key to continue"
-puts ""
-
-
-
-
-
-puts_h2 "Move the API admin code into the admin package and update package todos"
+puts_h1 "Move the API admin code into the admin package and update package todos"
 $interactive && read -n 1 -p "Press any key to continue"
 puts ""
 
@@ -215,3 +208,4 @@ mv packwerk.png ../01-04_extracted_messy_middle.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01-04_extracted_messy_middle_package_todo.yml
 $interactive && open ../01-04_extracted_messy_middle.png
 
+find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
