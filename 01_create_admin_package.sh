@@ -152,13 +152,20 @@ bin/packwerk update
 echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
 mv packwerk.png ../01-02_admin_depending_on_root.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01-02_admin_depending_on_root_package_todo.yml
-../01-02_admin_depending_on_root.png
+$interactive && open ../01-02_admin_depending_on_root.png
+
+
+
 
 puts_h2 "Let's take a closer look at the root package_todo.yml"
 $interactive && read -n 1 -p "Press any key to continue"
 puts ""
 
 $interactive && open package_todo.yml
+
+
+
+
 
 puts_h2 "There is a bunch of admin code still in the root pack (In those API folders)"
 $interactive && read -n 1 -p "Press any key to continue"
