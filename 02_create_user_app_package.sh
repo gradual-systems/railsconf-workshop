@@ -48,6 +48,12 @@ dependencies:
 
 bin/packwerk update
 
+echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
+mv packwerk.png ../02-01_user_facing_app_extracted.png
+find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../02-01_user_facing_app_extracted.png
+
+
+
 find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
 
 
