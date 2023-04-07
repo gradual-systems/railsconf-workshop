@@ -114,7 +114,7 @@ find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
 
 
 echo "TESTS PASS!!! Let's see what packwerk says"
-$intputs_h2eractive && read -n 1 -p "Press any key to continue"
+$interactive && read -n 1 -p "Press any key to continue"
 puts ""
 
 bin/packwerk update
