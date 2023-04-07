@@ -48,14 +48,11 @@ git clean -fd
 git pull --rebase
 
 puts_h2 "Installing bundle"
-bundle
+bundle | grep Installing || echo "No new gems were installed"
 
 bundle binstubs bundler --force
 
-# nvm use 19
-
 # From https://github.com/mastodon/mastodon/blob/main/.devcontainer/post-create.sh
-# export NODE_OPTIONS=--openssl-legacy-provider
 
 puts_h2 "Fetch Javascript dependencies"
 yarn --frozen-lockfile
@@ -68,8 +65,8 @@ RAILS_ENV=test ./bin/rails db:drop
 RAILS_ENV=test ./bin/rails db:setup
 
 puts_h2 "[re]create, migrate, and seed the development database"
-RAILS_ENV=development ./bin/rails db:drop
-RAILS_ENV=development ./bin/rails db:setup
+RAILS_ENV=development ./bin/rails db:drop 
+RAILS_ENV=development ./bin/rails db:setup > /dev/null
 
 puts_h2 "Precompile assets for development"
 RAILS_ENV=development ./bin/rails assets:precompile
