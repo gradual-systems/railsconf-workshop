@@ -200,7 +200,7 @@ bin/packwerk update
 
 echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
 mv packwerk.png ../01-03_extracted_messy_middle.png
-find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01-04_extracted_messy_middle_package_todo.yml
+find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01-03_extracted_messy_middle_package_todo.yml
 $interactive && open ../01-03_extracted_messy_middle.png
 
 find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
