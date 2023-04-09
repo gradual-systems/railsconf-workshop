@@ -12,22 +12,25 @@ tree . -L 1
 └── mastodon-workshop
 ```
 
-Run in the mastodon directory in interactive mode
+### Setting up mastodon?
 
-```
-../mastodon-workshop/00_mastodon_test.sh && \
-../mastodon-workshop/01_create_admin_package.sh && \
-../mastodon-workshop/02_create_user_app_package.sh
-```
+Run our first script:
+`../mastodon-workshop/00_mastodon_test.sh`
+
+Please file an issue or open a PR if you find any issues with the script!
+
+### Creating the admin package?
+`../mastodon-workshop/01_create_admin_package.sh`
+
+### Creating the user app package?
+
+Run in the mastodon directory in interactive mode
+`../mastodon-workshop/02_create_user_app_package.sh`
+
+### Want to run in non-interactive mode?
 
 Run in the mastodon directory in NON-interactive mode
 
 ```
-export NI="y"
-
-../mastodon-workshop/00_mastodon_test.sh && \
-../mastodon-workshop/01_create_admin_package.sh && \
-../mastodon-workshop/02_create_user_app_package.sh  
-
-unset NI
+NI="y" ../mastodon-workshop/01_create_admin_package.sh
 ```
