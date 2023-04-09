@@ -33,7 +33,7 @@ $interactive && read -n 1 -p "Press any key to continue"
 puts ""
 
 puts_h2 "Installing system dependencies"
-brew install    gnu-sed libidn libpq postgresql redis yarn ffmpeg imagemagick
+brew install gnu-sed libidn libpq postgresql redis yarn ffmpeg imagemagick nvm
 
 puts_h2 "Using nvm to set node version to 19"
 export NVM_DIR=$HOME/.nvm;
@@ -41,6 +41,7 @@ source $NVM_DIR/nvm.sh;
 nvm use 19 || nvm install 19 && nvm use 19 
 
 puts_h2 "Using rbenv to set ruby version to 3.2.2"
+brew upgrade ruby-build
 export PATH="$HOME/.rbenv/shims:$PATH"
 rbenv local 3.2.2 || rbenv install 3.2.2 && rbenv local 3.2.2 
 

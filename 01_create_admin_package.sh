@@ -2,7 +2,7 @@
 set -e
 
 puts_h1 () {
-    echo "  \n\n\n################################################################################"
+    echo "################################################################################"
     echo "### " $1
     echo "################################################################################"
     echo ""
@@ -44,10 +44,11 @@ $interactive && read -n 1 -p "Press any key to continue"
 puts ""
 
 gsed '/use_packs/d' Gemfile
+gsed '/visualize_packwerk/d' Gemfile
 
 echo "
 gem 'use_packs'
-gem 'visualize_packwerk', path: '../visualize_packwerk'
+gem 'visualize_packwerk'
 " >> Gemfile
 
 echo "pack_paths:
@@ -85,7 +86,7 @@ bin/packs move packs/admin \
   app/views/admin \
   app/workers/admin
 
-find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features || puts_h2 "Spec execution failed because packs directory is being ignored by Rails"
+find . -iname "account_actions_controller_spec.rb" | xargs bundle exec rspec spec/features || puts_h2 "Spec execution failed because packs directory is being ignored by Rails"
 
 
 
@@ -108,7 +109,7 @@ echo "
 --format Fuubar
 " > .rspec
 
-find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
+find . -iname "account_actions_controller_spec.rb" | xargs bundle exec rspec spec/features
 
 
 
@@ -120,7 +121,11 @@ puts ""
 
 bin/packwerk update
 
-echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
+echo "Installing graphviz so we can graph the results!"
+
+brew install graphviz
+RAILS_ENV=development bundle exec rails runner 'VisualizePackwerk.package_graph!(Packs.all)'
+
 mv packwerk.png ../01-01_admin_extracted.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01-01_admin_extracted_package_todo.yml
 $interactive && open ../01-01_admin_extracted.png
@@ -150,7 +155,7 @@ dependencies:
 
 bin/packwerk update
 
-echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
+RAILS_ENV=development bundle exec rails runner 'VisualizePackwerk.package_graph!(Packs.all)'
 mv packwerk.png ../01-02_admin_depending_on_root.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01-02_admin_depending_on_root_package_todo.yml
 $interactive && open ../01-02_admin_depending_on_root.png
@@ -198,9 +203,9 @@ bin/packs move packs/messy_middle \
 
 bin/packwerk update
 
-echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
+RAILS_ENV=development bundle exec rails runner 'VisualizePackwerk.package_graph!(Packs.all)'
 mv packwerk.png ../01-03_extracted_messy_middle.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01-03_extracted_messy_middle_package_todo.yml
 $interactive && open ../01-03_extracted_messy_middle.png
 
-find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
+find . -iname "account_actions_controller_spec.rb" | xargs bundle exec rspec spec/features
