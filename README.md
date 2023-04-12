@@ -4,7 +4,7 @@ Ruby At Scale Workshop with Mastodon
 ## Prerequisites
 
 * We built this script for macos
-* YOu must have [nvm](https://github.com/nvm-sh/nvm#install--update-script) and [rbenv](https://github.com/rbenv/rbenv#installation) installed
+* You must have [nvm](https://github.com/nvm-sh/nvm#install--update-script) and [rbenv](https://github.com/rbenv/rbenv#installation) installed
 
 ## Usage
 Check out mastodon from the [gradual.systems fork of mastodon](https://github.com/gradual-systems/mastodon): https://github.com/gradual-systems/mastodon.
