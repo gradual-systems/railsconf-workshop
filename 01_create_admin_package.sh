@@ -48,7 +48,7 @@ gsed '/use_packs/d' Gemfile
 echo "
 gem 'use_packs'
 gem 'packs-rails'
-gem 'visualize_packwerk', path: '../visualize_packwerk'
+gem 'visualize_packwerk'
 " >> Gemfile
 
 echo "pack_paths:
