@@ -93,7 +93,7 @@ bin/packs move packs/admin \
   app/views/admin \
   app/workers/admin
 
-find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
+find . -iname "account_actions_controller_spec.rb" | xargs bundle exec rspec spec/features
 
 
 
@@ -105,7 +105,7 @@ puts ""
 
 bin/packwerk update
 
-echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
+RAILS_ENV=development bundle exec rails runner 'VisualizePackwerk.package_graph!(Packs.all)'
 mv packwerk.png ../01-01_admin_extracted.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01-01_admin_extracted_package_todo.yml
 $interactive && open ../01-01_admin_extracted.png

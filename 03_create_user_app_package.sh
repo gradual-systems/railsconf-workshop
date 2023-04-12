@@ -49,12 +49,12 @@ dependencies:
 
 bin/packwerk update
 
-echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
+RAILS_ENV=development bundle exec rails runner 'VisualizePackwerk.package_graph!(Packs.all)'
 mv packwerk.png ../03-01_user_facing_app_extracted.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../03-01_user_facing_app_extracted_package_todo.yml
 $interactive && open ../03-01_user_facing_app_extracted.png
 
-find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
+find . -iname "account_actions_controller_spec.rb" | xargs bundle exec rspec spec/features
 
 
 
@@ -71,11 +71,11 @@ dependencies:
 
 bin/packwerk update
 
-echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
+RAILS_ENV=development bundle exec rails runner 'VisualizePackwerk.package_graph!(Packs.all)'
 mv packwerk.png ../03-02_admin_depends_on_use_facing_app.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../03-02_admin_depends_on_use_facing_app_package_todo.yml
 $interactive && open ../03-02_admin_depends_on_use_facing_app.png
 
-find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
+find . -iname "account_actions_controller_spec.rb" | xargs bundle exec rspec spec/features
 
 

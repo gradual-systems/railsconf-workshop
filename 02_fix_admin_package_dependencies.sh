@@ -56,7 +56,7 @@ bin/packs move packs/admin \
 
 bin/packwerk update
 
-echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
+RAILS_ENV=development bundle exec rails runner 'VisualizePackwerk.package_graph!(Packs.all)'
 mv packwerk.png ../02-01_more_into_admin.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../02-01_more_into_admin_package_todo.yml
 $interactive && open ../02-01_more_into_admin.png
@@ -80,12 +80,12 @@ bin/packs move packs/messy_middle \
 
 bin/packwerk update
 
-echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
+RAILS_ENV=development bundle exec rails runner 'VisualizePackwerk.package_graph!(Packs.all)'
 mv packwerk.png ../02-02_extracted_messy_middle.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../02-02_extracted_messy_middle_package_todo.yml
 $interactive && open ../02-02_extracted_messy_middle.png
 
-find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
+find . -iname "account_actions_controller_spec.rb" | xargs bundle exec rspec spec/features
 
 
 
@@ -106,9 +106,9 @@ rm -rf packs/messy_middle
 
 bin/packwerk update
 
-echo 'VisualizePackwerk.package_graph!(Packs.all)' | RAILS_ENV=development bundle exec rails c
+RAILS_ENV=development bundle exec rails runner 'VisualizePackwerk.package_graph!(Packs.all)'
 mv packwerk.png ../02-03_user_facing_app_with_messy_middle.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../02-03_user_facing_app_with_messy_middle_package_todo.yml
 $interactive && open ../02-03_user_facing_app_with_messy_middle.png
 
-find . -iname "account_actions_controller_spec.rb" | xargs rspec spec/features
+find . -iname "account_actions_controller_spec.rb" | xargs bundle exec rspec spec/features
