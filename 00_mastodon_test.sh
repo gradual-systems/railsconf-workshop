@@ -33,7 +33,7 @@ $interactive && read -n 1 -p "Press any key to continue"
 puts ""
 
 puts_h2 "Installing system dependencies"
-brew install    gnu-sed libidn libpq postgresql redis yarn ffmpeg imagemagick
+brew install gnu-sed libidn libpq postgresql redis yarn ffmpeg imagemagick graphviz
 
 puts_h2 "Using nvm to set node version to 19"
 export NVM_DIR=$HOME/.nvm;
