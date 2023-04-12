@@ -1,6 +1,11 @@
 # mastodon-workshop
 Ruby At Scale Workshop with Mastodon
 
+## Prerequisites
+
+* We built this script for macos
+* YOu must have [nvm](https://github.com/nvm-sh/nvm#install--update-script) and [rbenv](https://github.com/rbenv/rbenv#installation) installed
+
 ## Usage
 
 Check out this repo next to a mastodon repo, like so:
@@ -12,22 +17,24 @@ tree . -L 1
 └── mastodon-workshop
 ```
 
-Run in the mastodon directory in interactive mode
+### Setting up your machine to run mastodon
+
+To install mastodon testing dependencies, run 
 
 ```
-../mastodon-workshop/00_mastodon_test.sh && \
-../mastodon-workshop/01_create_admin_package.sh && \
-../mastodon-workshop/02_create_user_app_package.sh
+../mastodon-workshop/00_mastodon_test.sh
 ```
 
-Run in the mastodon directory in NON-interactive mode
+### Running the workshop code
+
+There are more scripts in the repo, indexed 01, 02, and 03. We'll use these throughout the workshop.
+
+### Running in non-interactive mode
+
+You can run all scripts in NON-interactive mode like so:
 
 ```
 export NI="y"
-
-../mastodon-workshop/00_mastodon_test.sh && \
-../mastodon-workshop/01_create_admin_package.sh && \
-../mastodon-workshop/02_create_user_app_package.sh  
-
+../mastodon-workshop/SCRIPT_YOU_WANT_TO_RUN
 unset NI
 ```
