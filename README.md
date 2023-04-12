@@ -7,8 +7,9 @@ Ruby At Scale Workshop with Mastodon
 * YOu must have [nvm](https://github.com/nvm-sh/nvm#install--update-script) and [rbenv](https://github.com/rbenv/rbenv#installation) installed
 
 ## Usage
+Check out mastodon from the [gradual.systems fork of mastodon](https://github.com/gradual-systems/mastodon): https://github.com/gradual-systems/mastodon.
 
-Check out this repo next to a mastodon repo, like so:
+Check out this repo (the [mastodon-workshop](https://github.com/gradual-systems/mastodon-workshop)) next to the mastodon repo, like so:
 
 ```
 tree . -L 1
