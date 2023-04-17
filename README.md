@@ -18,6 +18,9 @@ tree . -L 1
 └── mastodon-workshop
 ```
 
+We recommend a shallow clone, which will be much faster.
+For example, if using `gh`: `gh repo clone mastodon/mastodon -- --depth 1`
+
 ### Setting up your machine to run mastodon
 
 To install mastodon testing dependencies, run 
