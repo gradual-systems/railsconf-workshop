@@ -6,11 +6,22 @@ Ruby At Scale Workshop with Mastodon
 * We built this script for macos
 * You must have [nvm](https://github.com/nvm-sh/nvm#install--update-script) and [rbenv](https://github.com/rbenv/rbenv#installation) installed
 
-## Usage
-Check out mastodon from the [gradual.systems fork of mastodon](https://github.com/gradual-systems/mastodon): https://github.com/gradual-systems/mastodon.
+## Before the workshop
 
-Check out this repo (the [mastodon-workshop](https://github.com/gradual-systems/mastodon-workshop)) next to the mastodon repo, like so:
+### Setting up your machine to run mastodon
 
+```
+# Check out the gradual.systems fork of mastodon
+git clone git@github.com:gradual-systems/mastodon.git
+
+git clone git@github.com:gradual-systems/mastodon-workshop.git
+
+pushd mastodon
+../mastodon-workshop/00_mastodon_test.sh
+popd
+```
+
+Note that your repos will be next to each other on the filesystem:
 ```
 tree . -L 1
 .
@@ -18,13 +29,7 @@ tree . -L 1
 └── mastodon-workshop
 ```
 
-### Setting up your machine to run mastodon
-
-To install mastodon testing dependencies, run 
-
-```
-../mastodon-workshop/00_mastodon_test.sh
-```
+## During the workshop
 
 ### Running the workshop code
 
