@@ -15,7 +15,7 @@ rm -rf packs/messy_middle
 bin/packwerk update
 
 bin/packs visualize
-mv packwerk.png ../04.png
+cp packwerk.png ../04.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../04_package_todo.yml
 
 

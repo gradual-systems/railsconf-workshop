@@ -13,7 +13,7 @@ gsed -i "s/'app'/'packs', 'user_facing_app', 'app'/" packs/user_facing_app/app/v
 bin/packwerk update
 
 bin/packs visualize
-mv packwerk.png ../05.png
+cp packwerk.png ../05.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../05_package_todo.yml
 
 

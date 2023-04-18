@@ -16,7 +16,7 @@ dependencies:
 bin/packwerk update
 
 bin/packs visualize
-mv packwerk.png ../06.png
+cp packwerk.png ../06.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../06_package_todo.yml
 
 

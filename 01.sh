@@ -24,7 +24,7 @@ bin/packs move packs/admin \
 bin/packwerk update
 
 bin/packs visualize
-mv packwerk.png ../01.png
+cp packwerk.png ../01.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01_package_todo.yml
 
 
