@@ -1,7 +1,7 @@
 
 set -e
 
-puts "Accept packwerk dependencies"
+echo "Accept packwerk dependencies"
 
 echo "
 dependencies:

@@ -1,7 +1,7 @@
 
 set -e
 
-puts "Create pack for 'messy middle'"
+echo "Create pack for 'messy middle'"
 
 bin/packs create packs/messy_middle
 

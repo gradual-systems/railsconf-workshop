@@ -1,7 +1,7 @@
 
 set -e
 
-puts "Create user facing app pack"
+echo "Create user facing app pack"
 
 bin/packs create packs/user_facing_app
 

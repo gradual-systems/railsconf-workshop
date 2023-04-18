@@ -1,7 +1,7 @@
 
 set -e
 
-puts "Merge 'messy middle' with root pack"
+echo "Merge 'messy middle' with root pack"
 
 bin/packs move . \
   packs/messy_middle/app/workers/admin/account_deletion_worker.rb \

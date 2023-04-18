@@ -1,7 +1,7 @@
 set -x
 set -e
 
-puts "Create admin pack"
+echo "Create admin pack"
 
 bin/packs create packs/admin
 

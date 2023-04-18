@@ -1,7 +1,7 @@
 
 set -e
 
-puts "Fix some admin package dependencies"
+echo "Fix some admin package dependencies"
 
 bin/packs move packs/admin \
   app/controllers/api/v1/admin \
