@@ -1,6 +1,6 @@
 set -e
 
-puts "Ensure Mastodon tests work"
+echo "Ensure Mastodon tests work"
 
 brew install gnu-sed libidn libpq postgresql redis yarn ffmpeg imagemagick graphviz
 
