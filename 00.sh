@@ -15,6 +15,7 @@ nvm use 19 || nvm install 19 && nvm use 19
 export PATH="$HOME/.rbenv/shims:$PATH"
 rbenv local 3.2.2 || rbenv install 3.2.2 && rbenv local 3.2.2 
 
+bundle install
 
 # From https://github.com/mastodon/mastodon/blob/main/.devcontainer/post-create.sh
 
