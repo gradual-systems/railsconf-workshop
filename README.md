@@ -35,12 +35,3 @@ tree . -L 1
 
 There are more scripts in the repo, indexed 01, 02, and 03. We'll use these throughout the workshop.
 
-### Running in non-interactive mode
-
-You can run all scripts in NON-interactive mode like so:
-
-```
-export NI="y"
-../mastodon-workshop/SCRIPT_YOU_WANT_TO_RUN
-unset NI
-```
