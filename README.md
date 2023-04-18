@@ -12,12 +12,13 @@ Ruby At Scale Workshop with Mastodon
 
 ```
 # Check out the gradual.systems fork of mastodon
-git clone --depth=1 https://github.com/gradual-systems/mastodon.git
 
+cd YOUR_WORKSPACE
+git clone --depth=1 https://github.com/gradual-systems/mastodon.git
 git clone https://github.com/gradual-systems/mastodon-workshop.git
 
 pushd mastodon
-../mastodon-workshop/00_mastodon_setup.sh
+../mastodon-workshop/00.sh
 popd
 ```
 

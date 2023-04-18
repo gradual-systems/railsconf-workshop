@@ -1,6 +1,8 @@
 
 set -e
 
+puts "Accept packwerk dependencies"
+
 echo "
 dependencies:
 - packs/user_facing_app

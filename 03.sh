@@ -1,6 +1,8 @@
 
 set -e
 
+puts "Create pack for 'messy middle'"
+
 bin/packs create packs/messy_middle
 
 bin/packs move packs/messy_middle \

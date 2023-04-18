@@ -1,6 +1,8 @@
 
 set -e
 
+puts "Merge 'messy middle' with root pack"
+
 bin/packs move . \
   packs/messy_middle/app/workers/admin/account_deletion_worker.rb \
   packs/messy_middle/app/models/admin/action_log.rb \

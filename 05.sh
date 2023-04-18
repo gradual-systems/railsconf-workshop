@@ -1,6 +1,8 @@
 
 set -e
 
+puts "Create user facing app pack"
+
 bin/packs create packs/user_facing_app
 
 bin/packs move packs/user_facing_app app

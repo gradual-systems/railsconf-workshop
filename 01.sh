@@ -1,6 +1,8 @@
 set -x
 set -e
 
+puts "Create admin pack"
+
 bin/packs create packs/admin
 
 bin/packs move packs/admin \
