@@ -17,7 +17,7 @@ git clone --depth=1 git@github.com:gradual-systems/mastodon.git
 git clone git@github.com:gradual-systems/mastodon-workshop.git
 
 pushd mastodon
-../mastodon-workshop/00_mastodon_test.sh
+../mastodon-workshop/00_mastodon_setup.sh
 popd
 ```
 
