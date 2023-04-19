@@ -3,15 +3,8 @@ set -e
 
 echo "Accept packwerk dependencies"
 
-echo "
-dependencies:
-- packs/user_facing_app
-" >> package.yml
-
-echo "
-dependencies:
-- packs/user_facing_app
-" >> packs/admin/package.yml
+bin/packs add_dependency . packs/user_facing_app
+bin/packs add_dependency packs/admin packs/user_facing_app
 
 bin/packwerk update
 
