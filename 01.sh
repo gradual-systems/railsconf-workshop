@@ -5,24 +5,10 @@ echo "Create admin pack"
 
 bin/packs create packs/admin
 
-bin/packs move packs/admin \
-  app/chewy/admin \
-  app/controllers/admin \
-  app/helpers/admin \
-  app/javascript/admin \
-  app/lib/admin \
-  app/mailers/admin \
-  app/models/admin \
-  app/policies/admin \
-  app/presenters/admin \
-  app/serializers/admin \
-  app/services/admin \
-  app/validators/admin \
-  app/views/admin \
-  app/workers/admin
+bin/packs move packs/admin app/*/admin 
 
 bin/packwerk update
 
 bin/packs visualize
-cp packwerk.png ../01.png
+
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../01_package_todo.yml

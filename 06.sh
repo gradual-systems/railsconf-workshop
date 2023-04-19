@@ -9,5 +9,5 @@ bin/packs add_dependency packs/admin packs/user_facing_app
 bin/packwerk update
 
 bin/packs visualize
-cp packwerk.png ../06.png
+
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../06_package_todo.yml
