@@ -4,7 +4,7 @@ echo "Set up bare minimum for workshop. If you're interested in doing the advanc
 
 
 echo "
-gem 'packs-rails', group: %w(development test production)
+gem 'packs-rails'
 
 gem 'use_packs', group: %w(development test)
 gem 'visualize_packwerk', group: %w(development test)
@@ -12,7 +12,7 @@ gem 'visualize_packwerk', group: %w(development test)
 # We're using this fork for the Mastodon Gradual Modularization workshop only. 
 # In a real-life situation you should replace the following line with commented out line below
 gem 'packwerk', github: 'gradual-systems/packwerk', branch: 'main', group: %w(development test)
-# gem 'packwerk'
+# gem 'packwerk', group: %w(development test)
 " >> Gemfile
 
 bundle install
