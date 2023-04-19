@@ -4,7 +4,6 @@ Ruby At Scale Workshop with Mastodon
 ## Prerequisites
 
 * We built this script for macos
-* You must have [nvm](https://github.com/nvm-sh/nvm#install--update-script) and [rbenv](https://github.com/rbenv/rbenv#installation) installed
 
 ## Before the workshop
 
