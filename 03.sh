@@ -17,7 +17,3 @@ bin/packwerk update
 bin/packs visualize
 cp packwerk.png ../03.png
 find . -name "package_todo.yml" -exec basename {} \; -exec cat {} \; > ../03_package_todo.yml
-
-
-
-# find . -iname "account_actions_controller_spec.rb" | xargs bundle exec rspec spec/features
