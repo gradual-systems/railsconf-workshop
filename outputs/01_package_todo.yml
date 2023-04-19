@@ -1,0 +1,772 @@
+package_todo.yml
+# This file contains a list of dependencies that are not part of the long term plan for the
+# 'packs/admin' package.
+# We should generally work to reduce this list over time.
+#
+# You can regenerate this file using the following command:
+#
+# bin/packwerk update-todo
+---
+".":
+  "::Account":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/account_actions_controller.rb
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/admin/action_logs_controller.rb
+    - packs/admin/app/controllers/admin/base_controller.rb
+    - packs/admin/app/controllers/admin/change_emails_controller.rb
+    - packs/admin/app/controllers/admin/relationships_controller.rb
+    - packs/admin/app/controllers/admin/statuses_controller.rb
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_accounts_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_followers_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_follows_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_media_attachments_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_reports_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_statuses_measure.rb
+    - packs/admin/app/lib/admin/system_check/media_privacy_check.rb
+    - packs/admin/app/models/admin/action_log.rb
+    - packs/admin/app/models/admin/action_log_filter.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+    - packs/admin/app/workers/admin/account_deletion_worker.rb
+    - packs/admin/app/workers/admin/suspension_worker.rb
+    - packs/admin/app/workers/admin/unsuspension_worker.rb
+    - packs/admin/spec/controllers/admin/accounts_controller_spec.rb
+  "::AccountFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/spec/controllers/admin/accounts_controller_spec.rb
+  "::AccountFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::AccountModerationNote":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/account_moderation_notes_controller.rb
+    - packs/admin/spec/controllers/admin/account_moderation_notes_controller_spec.rb
+  "::AccountStatusesFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::AccountWarningPreset":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/account_actions_controller.rb
+    - packs/admin/app/controllers/admin/warning_presets_controller.rb
+    - packs/admin/app/models/admin/account_action.rb
+  "::AccountableConcern":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/base_controller.rb
+    - packs/admin/app/models/admin/account_action.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::AccountsHelper":
+    violations:
+    - dependency
+    files:
+    - packs/admin/spec/helpers/admin/account_moderation_notes_helper_spec.rb
+  "::ActivityTracker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/measure/active_users_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/interactions_measure.rb
+  "::Admin":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/account_actions_controller.rb
+    - packs/admin/app/controllers/admin/account_moderation_notes_controller.rb
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/admin/action_logs_controller.rb
+    - packs/admin/app/controllers/admin/base_controller.rb
+    - packs/admin/app/controllers/admin/change_emails_controller.rb
+    - packs/admin/app/controllers/admin/confirmations_controller.rb
+    - packs/admin/app/controllers/admin/custom_emojis_controller.rb
+    - packs/admin/app/controllers/admin/dashboard_controller.rb
+    - packs/admin/app/controllers/admin/domain_blocks_controller.rb
+    - packs/admin/app/controllers/admin/email_domain_blocks_controller.rb
+    - packs/admin/app/controllers/admin/export_domain_allows_controller.rb
+    - packs/admin/app/controllers/admin/export_domain_blocks_controller.rb
+    - packs/admin/app/controllers/admin/follow_recommendations_controller.rb
+    - packs/admin/app/controllers/admin/instances_controller.rb
+    - packs/admin/app/controllers/admin/invites_controller.rb
+    - packs/admin/app/controllers/admin/ip_blocks_controller.rb
+    - packs/admin/app/controllers/admin/relationships_controller.rb
+    - packs/admin/app/controllers/admin/relays_controller.rb
+    - packs/admin/app/controllers/admin/report_notes_controller.rb
+    - packs/admin/app/controllers/admin/reports_controller.rb
+    - packs/admin/app/controllers/admin/resets_controller.rb
+    - packs/admin/app/controllers/admin/roles_controller.rb
+    - packs/admin/app/controllers/admin/rules_controller.rb
+    - packs/admin/app/controllers/admin/settings_controller.rb
+    - packs/admin/app/controllers/admin/site_uploads_controller.rb
+    - packs/admin/app/controllers/admin/statuses_controller.rb
+    - packs/admin/app/controllers/admin/tags_controller.rb
+    - packs/admin/app/controllers/admin/users/roles_controller.rb
+    - packs/admin/app/controllers/admin/users/two_factor_authentications_controller.rb
+    - packs/admin/app/controllers/admin/warning_presets_controller.rb
+    - packs/admin/app/controllers/admin/webhooks/secrets_controller.rb
+    - packs/admin/app/controllers/admin/webhooks_controller.rb
+  "::AdminExportControllerConcern":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/export_domain_allows_controller.rb
+    - packs/admin/app/controllers/admin/export_domain_blocks_controller.rb
+  "::Announcement":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/announcements_controller.rb
+  "::AnnouncementFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/announcements_controller.rb
+  "::AnnouncementFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/announcements_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::Appeal":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/dashboard_controller.rb
+    - packs/admin/app/controllers/admin/disputes/appeals_controller.rb
+    - packs/admin/app/models/admin/appeal_filter.rb
+  "::ApplicationController":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/base_controller.rb
+  "::ApplicationPolicy":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/policies/admin/status_policy.rb
+  "::ApplicationRecord":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/models/admin/account_action.rb
+    - packs/admin/app/models/admin/action_log.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::ApproveAppealService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/disputes/appeals_controller.rb
+  "::Authorization":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/base_controller.rb
+    - packs/admin/app/models/admin/account_action.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::Backup":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+  "::BlockDomainService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/spec/controllers/admin/domain_blocks_controller_spec.rb
+  "::CanonicalEmailBlock":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/spec/controllers/admin/accounts_controller_spec.rb
+  "::CustomEmoji":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/custom_emojis_controller.rb
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+    - packs/admin/spec/controllers/admin/custom_emojis_controller_spec.rb
+  "::CustomEmojiFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/custom_emojis_controller.rb
+  "::CustomEmojiFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/custom_emojis_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::DeleteAccountService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/workers/admin/account_deletion_worker.rb
+    - packs/admin/spec/workers/admin/account_deletion_worker_spec.rb
+  "::DeliveryFailureTracker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/instances_controller.rb
+  "::DomainAllow":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/domain_allows_controller.rb
+    - packs/admin/app/controllers/admin/export_domain_allows_controller.rb
+    - packs/admin/spec/controllers/admin/domain_allows_controller_spec.rb
+    - packs/admin/spec/controllers/admin/export_domain_allows_controller_spec.rb
+  "::DomainBlock":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/admin/domain_blocks_controller.rb
+    - packs/admin/app/controllers/admin/export_domain_blocks_controller.rb
+    - packs/admin/spec/controllers/admin/domain_blocks_controller_spec.rb
+  "::DomainBlockWorker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/domain_blocks_controller.rb
+    - packs/admin/spec/controllers/admin/domain_blocks_controller_spec.rb
+  "::EmailDomainBlock":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/email_domain_blocks_controller.rb
+    - packs/admin/spec/controllers/admin/email_domain_blocks_controller_spec.rb
+  "::Follow":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/measure/instance_followers_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_follows_measure.rb
+  "::FollowRecommendationFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/follow_recommendations_controller.rb
+  "::FollowRecommendationFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/follow_recommendations_controller.rb
+  "::Form::AccountBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/admin/follow_recommendations_controller.rb
+    - packs/admin/app/controllers/admin/relationships_controller.rb
+  "::Form::AdminSettings":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/settings_controller.rb
+    - packs/admin/spec/controllers/admin/settings/branding_controller_spec.rb
+  "::Form::AdminSettings::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/settings_controller.rb
+  "::Form::CustomEmojiBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/custom_emojis_controller.rb
+  "::Form::DomainBlockBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/domain_blocks_controller.rb
+    - packs/admin/app/controllers/admin/export_domain_blocks_controller.rb
+  "::Form::EmailDomainBlockBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/email_domain_blocks_controller.rb
+  "::Form::IpBlockBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/ip_blocks_controller.rb
+  "::Import":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+  "::Instance":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/export_domain_blocks_controller.rb
+    - packs/admin/app/controllers/admin/instances_controller.rb
+    - packs/admin/spec/controllers/admin/instances_controller_spec.rb
+  "::InstanceFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/instances_controller.rb
+  "::InstanceFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/instances_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::Invite":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/invites_controller.rb
+    - packs/admin/spec/controllers/admin/invites_controller_spec.rb
+  "::InviteFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/invites_controller.rb
+  "::InviteFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/invites_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::IpBlock":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/ip_blocks_controller.rb
+  "::LanguagesHelper":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/dimension/instance_accounts_dimension.rb
+    - packs/admin/app/lib/admin/metrics/dimension/instance_languages_dimension.rb
+    - packs/admin/app/lib/admin/metrics/dimension/languages_dimension.rb
+    - packs/admin/app/lib/admin/metrics/dimension/tag_languages_dimension.rb
+  "::MediaAttachment":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_media_attachments_measure.rb
+  "::PreviewCard":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+  "::PreviewCardTrend":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links_controller.rb
+  "::PublishScheduledAnnouncementWorker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/announcements_controller.rb
+  "::PurgeDomainService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/workers/admin/domain_purge_worker.rb
+    - packs/admin/spec/workers/admin/domain_purge_worker_spec.rb
+  "::Redisable":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/dashboard_controller.rb
+    - packs/admin/app/lib/admin/metrics/dimension/software_versions_dimension.rb
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+  "::RelationshipFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/relationships_controller.rb
+  "::RelationshipFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/relationships_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::Relay":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/relays_controller.rb
+  "::RemovalWorker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::Report":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/dashboard_controller.rb
+    - packs/admin/app/controllers/admin/reports/actions_controller.rb
+    - packs/admin/app/controllers/admin/reports_controller.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_reports_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/opened_reports_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/resolved_reports_measure.rb
+    - packs/admin/app/models/admin/account_action.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+    - packs/admin/spec/controllers/admin/statuses_controller_spec.rb
+    - packs/admin/spec/models/admin/account_action_spec.rb
+  "::ReportFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/reports_controller.rb
+  "::ReportFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/reports_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::ReportNote":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/report_notes_controller.rb
+    - packs/admin/spec/controllers/admin/report_notes_controller_spec.rb
+  "::Request":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/system_check/media_privacy_check.rb
+  "::ResolveAccountService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/spec/controllers/admin/accounts_controller_spec.rb
+  "::RoutingHelper":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/system_check/media_privacy_check.rb
+    - packs/admin/app/lib/admin/system_check/rules_check.rb
+  "::Rule":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/rules_controller.rb
+    - packs/admin/app/lib/admin/system_check/rules_check.rb
+  "::Setting":
+    violations:
+    - dependency
+    files:
+    - packs/admin/spec/controllers/admin/settings/branding_controller_spec.rb
+  "::SiteUpload":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/site_uploads_controller.rb
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+  "::Status":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/measure/instance_statuses_measure.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+    - packs/admin/app/models/admin/status_filter.rb
+  "::StatusTrend":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/statuses_controller.rb
+  "::SuspendAccountService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/workers/admin/suspension_worker.rb
+  "::Tag":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/dashboard_controller.rb
+    - packs/admin/app/controllers/admin/tags_controller.rb
+    - packs/admin/app/lib/admin/metrics/measure/tag_accounts_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/tag_servers_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/tag_uses_measure.rb
+    - packs/admin/spec/policies/admin/status_policy_spec.rb
+  "::TagManager":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/instances_controller.rb
+  "::Tombstone":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::Trends::PreviewCardBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links_controller.rb
+  "::Trends::PreviewCardFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links_controller.rb
+  "::Trends::PreviewCardFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::Trends::PreviewCardProviderBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links/preview_card_providers_controller.rb
+  "::Trends::PreviewCardProviderFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links/preview_card_providers_controller.rb
+  "::Trends::PreviewCardProviderFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links/preview_card_providers_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::Trends::StatusBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/statuses_controller.rb
+  "::Trends::StatusFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/statuses_controller.rb
+  "::Trends::StatusFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/statuses_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::Trends::TagBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/tags_controller.rb
+  "::Trends::TagFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/tags_controller.rb
+  "::Trends::TagFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/tags_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::UnallowDomainService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/domain_allows_controller.rb
+    - packs/admin/spec/controllers/admin/domain_allows_controller_spec.rb
+  "::UnavailableDomain":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/instances_controller.rb
+  "::UnblockDomainService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/domain_blocks_controller.rb
+    - packs/admin/spec/controllers/admin/domain_blocks_controller_spec.rb
+  "::UnpublishAnnouncementWorker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/announcements_controller.rb
+  "::UnsuspendAccountService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/workers/admin/unsuspension_worker.rb
+  "::UpdateStatusService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::User":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/dashboard_controller.rb
+    - packs/admin/app/controllers/admin/users/roles_controller.rb
+    - packs/admin/app/controllers/admin/users/two_factor_authentications_controller.rb
+    - packs/admin/app/lib/admin/metrics/measure/new_users_measure.rb
+    - packs/admin/spec/controllers/admin/resets_controller_spec.rb
+  "::UserMailer":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/disputes/appeals_controller.rb
+    - packs/admin/app/controllers/admin/users/two_factor_authentications_controller.rb
+    - packs/admin/app/models/admin/account_action.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+    - packs/admin/spec/controllers/admin/change_emails_controller_spec.rb
+    - packs/admin/spec/controllers/admin/confirmations_controller_spec.rb
+    - packs/admin/spec/controllers/admin/disputes/appeals_controller_spec.rb
+  "::UserRole":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/roles_controller.rb
+    - packs/admin/spec/controllers/admin/account_actions_controller_spec.rb
+    - packs/admin/spec/controllers/admin/account_moderation_notes_controller_spec.rb
+    - packs/admin/spec/controllers/admin/accounts_controller_spec.rb
+    - packs/admin/spec/controllers/admin/action_logs_controller_spec.rb
+    - packs/admin/spec/controllers/admin/announcements_controller_spec.rb
+    - packs/admin/spec/controllers/admin/base_controller_spec.rb
+    - packs/admin/spec/controllers/admin/change_emails_controller_spec.rb
+    - packs/admin/spec/controllers/admin/confirmations_controller_spec.rb
+    - packs/admin/spec/controllers/admin/custom_emojis_controller_spec.rb
+    - packs/admin/spec/controllers/admin/dashboard_controller_spec.rb
+    - packs/admin/spec/controllers/admin/disputes/appeals_controller_spec.rb
+    - packs/admin/spec/controllers/admin/domain_allows_controller_spec.rb
+    - packs/admin/spec/controllers/admin/domain_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/admin/email_domain_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/admin/export_domain_allows_controller_spec.rb
+    - packs/admin/spec/controllers/admin/export_domain_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/admin/follow_recommendations_controller_spec.rb
+    - packs/admin/spec/controllers/admin/instances_controller_spec.rb
+    - packs/admin/spec/controllers/admin/invites_controller_spec.rb
+    - packs/admin/spec/controllers/admin/ip_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/admin/relationships_controller_spec.rb
+    - packs/admin/spec/controllers/admin/relays_controller_spec.rb
+    - packs/admin/spec/controllers/admin/report_notes_controller_spec.rb
+    - packs/admin/spec/controllers/admin/reports/actions_controller_spec.rb
+    - packs/admin/spec/controllers/admin/reports_controller_spec.rb
+    - packs/admin/spec/controllers/admin/resets_controller_spec.rb
+    - packs/admin/spec/controllers/admin/roles_controller_spec.rb
+    - packs/admin/spec/controllers/admin/rules_controller_spec.rb
+    - packs/admin/spec/controllers/admin/settings/about_controller_spec.rb
+    - packs/admin/spec/controllers/admin/settings/appearance_controller_spec.rb
+    - packs/admin/spec/controllers/admin/settings/branding_controller_spec.rb
+    - packs/admin/spec/controllers/admin/settings/content_retention_controller_spec.rb
+    - packs/admin/spec/controllers/admin/settings/discovery_controller_spec.rb
+    - packs/admin/spec/controllers/admin/settings/registrations_controller_spec.rb
+    - packs/admin/spec/controllers/admin/site_uploads_controller_spec.rb
+    - packs/admin/spec/controllers/admin/statuses_controller_spec.rb
+    - packs/admin/spec/controllers/admin/tags_controller_spec.rb
+    - packs/admin/spec/controllers/admin/trends/links/preview_card_providers_controller_spec.rb
+    - packs/admin/spec/controllers/admin/trends/links_controller_spec.rb
+    - packs/admin/spec/controllers/admin/trends/statuses_controller_spec.rb
+    - packs/admin/spec/controllers/admin/trends/tags_controller_spec.rb
+    - packs/admin/spec/controllers/admin/users/roles_controller_spec.rb
+    - packs/admin/spec/controllers/admin/users/two_factor_authentications_controller_spec.rb
+    - packs/admin/spec/controllers/admin/warning_presets_controller_spec.rb
+    - packs/admin/spec/controllers/admin/webhooks/secrets_controller_spec.rb
+    - packs/admin/spec/controllers/admin/webhooks_controller_spec.rb
+    - packs/admin/spec/models/admin/account_action_spec.rb
+    - packs/admin/spec/policies/admin/status_policy_spec.rb
+  "::UserRole::FLAGS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/spec/controllers/admin/roles_controller_spec.rb
+    - packs/admin/spec/controllers/admin/users/roles_controller_spec.rb
+  "::UserRole::Flags::NONE":
+    violations:
+    - dependency
+    files:
+    - packs/admin/spec/controllers/admin/roles_controller_spec.rb
+  "::Webhook":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/webhooks/secrets_controller.rb
+    - packs/admin/app/controllers/admin/webhooks_controller.rb
+package_todo.yml
+# This file contains a list of dependencies that are not part of the long term plan for the
+# '.' package.
+# We should generally work to reduce this list over time.
+#
+# You can regenerate this file using the following command:
+#
+# bin/packwerk update-todo
+---
+packs/admin:
+  "::Admin::AccountAction":
+    violations:
+    - dependency
+    files:
+    - app/controllers/api/v1/admin/account_actions_controller.rb
+  "::Admin::AccountDeletionWorker":
+    violations:
+    - dependency
+    files:
+    - app/controllers/api/v1/admin/accounts_controller.rb
+    - app/workers/scheduler/suspended_user_cleanup_scheduler.rb
+  "::Admin::ActionLog":
+    violations:
+    - dependency
+    files:
+    - app/controllers/concerns/accountable_concern.rb
+    - app/models/report.rb
+    - db/post_migrate/20221101190723_backfill_admin_action_logs.rb
+    - db/post_migrate/20221206114142_backfill_admin_action_logs_again.rb
+    - lib/tasks/tests.rake
+    - spec/controllers/api/v1/admin/account_actions_controller_spec.rb
+    - spec/controllers/api/v1/admin/accounts_controller_spec.rb
+    - spec/controllers/concerns/accountable_concern_spec.rb
+  "::Admin::Import":
+    violations:
+    - dependency
+    files:
+    - app/controllers/concerns/admin_export_controller_concern.rb
+  "::Admin::Metrics::Dimension":
+    violations:
+    - dependency
+    files:
+    - app/controllers/api/v1/admin/dimensions_controller.rb
+  "::Admin::Metrics::Measure":
+    violations:
+    - dependency
+    files:
+    - app/controllers/api/v1/admin/measures_controller.rb
+  "::Admin::Metrics::Retention":
+    violations:
+    - dependency
+    files:
+    - app/controllers/api/v1/admin/retention_controller.rb
+  "::Admin::SuspensionWorker":
+    violations:
+    - dependency
+    files:
+    - app/models/form/account_batch.rb
+    - app/services/activitypub/process_account_service.rb
+    - spec/services/activitypub/process_account_service_spec.rb
+  "::Admin::UnsuspensionWorker":
+    violations:
+    - dependency
+    files:
+    - app/controllers/api/v1/admin/accounts_controller.rb
+    - app/services/activitypub/process_account_service.rb
+    - app/services/approve_appeal_service.rb
+    - spec/services/activitypub/process_account_service_spec.rb

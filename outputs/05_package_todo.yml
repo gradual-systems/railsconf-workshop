@@ -1,0 +1,1369 @@
+package_todo.yml
+# This file contains a list of dependencies that are not part of the long term plan for the
+# 'packs/admin' package.
+# We should generally work to reduce this list over time.
+#
+# You can regenerate this file using the following command:
+#
+# bin/packwerk update-todo
+---
+packs/user_facing_app:
+  "::Account":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/account_actions_controller.rb
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/admin/action_logs_controller.rb
+    - packs/admin/app/controllers/admin/base_controller.rb
+    - packs/admin/app/controllers/admin/change_emails_controller.rb
+    - packs/admin/app/controllers/admin/relationships_controller.rb
+    - packs/admin/app/controllers/admin/statuses_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/account_actions_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/accounts_controller.rb
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_accounts_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_followers_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_follows_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_media_attachments_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_reports_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_statuses_measure.rb
+    - packs/admin/app/lib/admin/system_check/media_privacy_check.rb
+    - packs/admin/app/models/admin/action_log_filter.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+    - packs/admin/spec/controllers/admin/accounts_controller_spec.rb
+  "::AccountFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/accounts_controller.rb
+    - packs/admin/app/controllers/api/v2/admin/accounts_controller.rb
+    - packs/admin/spec/controllers/admin/accounts_controller_spec.rb
+  "::AccountFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/accounts_controller.rb
+    - packs/admin/app/controllers/api/v2/admin/accounts_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::AccountModerationNote":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/account_moderation_notes_controller.rb
+    - packs/admin/spec/controllers/admin/account_moderation_notes_controller_spec.rb
+  "::AccountStatusesFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::AccountWarningPreset":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/account_actions_controller.rb
+    - packs/admin/app/controllers/admin/warning_presets_controller.rb
+    - packs/admin/app/models/admin/account_action.rb
+  "::AccountableConcern":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/base_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/accounts_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/canonical_email_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/domain_allows_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/domain_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/email_domain_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/ip_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/reports_controller.rb
+    - packs/admin/app/models/admin/account_action.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::AccountsHelper":
+    violations:
+    - dependency
+    files:
+    - packs/admin/spec/helpers/admin/account_moderation_notes_helper_spec.rb
+  "::ActivityTracker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/measure/active_users_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/interactions_measure.rb
+  "::Admin":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/account_actions_controller.rb
+    - packs/admin/app/controllers/admin/account_moderation_notes_controller.rb
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/admin/action_logs_controller.rb
+    - packs/admin/app/controllers/admin/base_controller.rb
+    - packs/admin/app/controllers/admin/change_emails_controller.rb
+    - packs/admin/app/controllers/admin/confirmations_controller.rb
+    - packs/admin/app/controllers/admin/custom_emojis_controller.rb
+    - packs/admin/app/controllers/admin/dashboard_controller.rb
+    - packs/admin/app/controllers/admin/domain_blocks_controller.rb
+    - packs/admin/app/controllers/admin/email_domain_blocks_controller.rb
+    - packs/admin/app/controllers/admin/export_domain_allows_controller.rb
+    - packs/admin/app/controllers/admin/export_domain_blocks_controller.rb
+    - packs/admin/app/controllers/admin/follow_recommendations_controller.rb
+    - packs/admin/app/controllers/admin/instances_controller.rb
+    - packs/admin/app/controllers/admin/invites_controller.rb
+    - packs/admin/app/controllers/admin/ip_blocks_controller.rb
+    - packs/admin/app/controllers/admin/relationships_controller.rb
+    - packs/admin/app/controllers/admin/relays_controller.rb
+    - packs/admin/app/controllers/admin/report_notes_controller.rb
+    - packs/admin/app/controllers/admin/reports_controller.rb
+    - packs/admin/app/controllers/admin/resets_controller.rb
+    - packs/admin/app/controllers/admin/roles_controller.rb
+    - packs/admin/app/controllers/admin/rules_controller.rb
+    - packs/admin/app/controllers/admin/settings_controller.rb
+    - packs/admin/app/controllers/admin/site_uploads_controller.rb
+    - packs/admin/app/controllers/admin/statuses_controller.rb
+    - packs/admin/app/controllers/admin/tags_controller.rb
+    - packs/admin/app/controllers/admin/users/roles_controller.rb
+    - packs/admin/app/controllers/admin/users/two_factor_authentications_controller.rb
+    - packs/admin/app/controllers/admin/warning_presets_controller.rb
+    - packs/admin/app/controllers/admin/webhooks/secrets_controller.rb
+    - packs/admin/app/controllers/admin/webhooks_controller.rb
+  "::Admin::AccountDeletionWorker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/accounts_controller.rb
+  "::Admin::ActionLog":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/action_logs_controller.rb
+    - packs/admin/app/models/admin/action_log_filter.rb
+    - packs/admin/spec/controllers/admin/accounts_controller_spec.rb
+    - packs/admin/spec/controllers/admin/action_logs_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/account_actions_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/accounts_controller_spec.rb
+    - packs/admin/spec/models/admin/account_action_spec.rb
+  "::Admin::Import":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/export_domain_allows_controller.rb
+    - packs/admin/app/controllers/admin/export_domain_blocks_controller.rb
+  "::Admin::SuspensionWorker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/models/admin/account_action.rb
+    - packs/admin/spec/models/admin/account_action_spec.rb
+  "::Admin::UnsuspensionWorker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/accounts_controller.rb
+  "::AdminExportControllerConcern":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/export_domain_allows_controller.rb
+    - packs/admin/app/controllers/admin/export_domain_blocks_controller.rb
+  "::Announcement":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/announcements_controller.rb
+  "::AnnouncementFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/announcements_controller.rb
+  "::AnnouncementFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/announcements_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::Api::BaseController":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/api/v1/admin/account_actions_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/accounts_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/canonical_email_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/dimensions_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/domain_allows_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/domain_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/email_domain_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/ip_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/measures_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/reports_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/retention_controller.rb
+  "::Api::V1::Trends::LinksController":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/api/v1/admin/trends/links_controller.rb
+  "::Api::V1::Trends::StatusesController":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/api/v1/admin/trends/statuses_controller.rb
+  "::Api::V1::Trends::TagsController":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/api/v1/admin/trends/tags_controller.rb
+  "::Appeal":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/dashboard_controller.rb
+    - packs/admin/app/controllers/admin/disputes/appeals_controller.rb
+    - packs/admin/app/models/admin/appeal_filter.rb
+  "::ApplicationController":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/base_controller.rb
+  "::ApplicationPolicy":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/policies/admin/status_policy.rb
+  "::ApplicationRecord":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/models/admin/account_action.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::ApproveAppealService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/disputes/appeals_controller.rb
+  "::Authorization":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/base_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/account_actions_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/accounts_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/canonical_email_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/dimensions_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/domain_allows_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/domain_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/email_domain_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/ip_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/measures_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/reports_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/retention_controller.rb
+    - packs/admin/app/models/admin/account_action.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::Backup":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+  "::BlockDomainService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/spec/controllers/admin/domain_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/domain_blocks_controller_spec.rb
+  "::CanonicalEmailBlock":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/canonical_email_blocks_controller.rb
+    - packs/admin/spec/controllers/admin/accounts_controller_spec.rb
+  "::CustomEmoji":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/custom_emojis_controller.rb
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+    - packs/admin/spec/controllers/admin/custom_emojis_controller_spec.rb
+  "::CustomEmojiFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/custom_emojis_controller.rb
+  "::CustomEmojiFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/custom_emojis_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::DeleteAccountService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/accounts_controller.rb
+  "::DeliveryFailureTracker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/instances_controller.rb
+  "::DomainAllow":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/domain_allows_controller.rb
+    - packs/admin/app/controllers/admin/export_domain_allows_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/domain_allows_controller.rb
+    - packs/admin/spec/controllers/admin/domain_allows_controller_spec.rb
+    - packs/admin/spec/controllers/admin/export_domain_allows_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/domain_allows_controller_spec.rb
+  "::DomainBlock":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/admin/domain_blocks_controller.rb
+    - packs/admin/app/controllers/admin/export_domain_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/domain_blocks_controller.rb
+    - packs/admin/spec/controllers/admin/domain_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/domain_blocks_controller_spec.rb
+  "::DomainBlockWorker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/domain_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/domain_blocks_controller.rb
+    - packs/admin/spec/controllers/admin/domain_blocks_controller_spec.rb
+  "::EmailDomainBlock":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/email_domain_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/email_domain_blocks_controller.rb
+    - packs/admin/spec/controllers/admin/email_domain_blocks_controller_spec.rb
+  "::Follow":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/measure/instance_followers_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_follows_measure.rb
+  "::FollowRecommendationFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/follow_recommendations_controller.rb
+  "::FollowRecommendationFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/follow_recommendations_controller.rb
+  "::Form::AccountBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/app/controllers/admin/follow_recommendations_controller.rb
+    - packs/admin/app/controllers/admin/relationships_controller.rb
+  "::Form::AdminSettings":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/settings_controller.rb
+    - packs/admin/spec/controllers/admin/settings/branding_controller_spec.rb
+  "::Form::AdminSettings::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/settings_controller.rb
+  "::Form::CustomEmojiBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/custom_emojis_controller.rb
+  "::Form::DomainBlockBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/domain_blocks_controller.rb
+    - packs/admin/app/controllers/admin/export_domain_blocks_controller.rb
+  "::Form::EmailDomainBlockBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/email_domain_blocks_controller.rb
+  "::Form::IpBlockBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/ip_blocks_controller.rb
+  "::Import":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+  "::Instance":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/export_domain_blocks_controller.rb
+    - packs/admin/app/controllers/admin/instances_controller.rb
+    - packs/admin/spec/controllers/admin/instances_controller_spec.rb
+  "::InstanceFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/instances_controller.rb
+  "::InstanceFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/instances_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::Invite":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/invites_controller.rb
+    - packs/admin/spec/controllers/admin/invites_controller_spec.rb
+  "::InviteFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/invites_controller.rb
+  "::InviteFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/invites_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::IpBlock":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/ip_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/ip_blocks_controller.rb
+  "::LanguagesHelper":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/dimension/instance_accounts_dimension.rb
+    - packs/admin/app/lib/admin/metrics/dimension/instance_languages_dimension.rb
+    - packs/admin/app/lib/admin/metrics/dimension/languages_dimension.rb
+    - packs/admin/app/lib/admin/metrics/dimension/tag_languages_dimension.rb
+  "::MediaAttachment":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_media_attachments_measure.rb
+  "::PreviewCard":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+  "::PreviewCardTrend":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links_controller.rb
+  "::PublishScheduledAnnouncementWorker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/announcements_controller.rb
+  "::PurgeDomainService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/workers/admin/domain_purge_worker.rb
+    - packs/admin/spec/workers/admin/domain_purge_worker_spec.rb
+  "::Redisable":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/dashboard_controller.rb
+    - packs/admin/app/lib/admin/metrics/dimension/software_versions_dimension.rb
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+  "::RelationshipFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/relationships_controller.rb
+  "::RelationshipFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/relationships_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::Relay":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/relays_controller.rb
+  "::RemovalWorker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::Report":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/dashboard_controller.rb
+    - packs/admin/app/controllers/admin/reports/actions_controller.rb
+    - packs/admin/app/controllers/admin/reports_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/reports_controller.rb
+    - packs/admin/app/lib/admin/metrics/measure/instance_reports_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/opened_reports_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/resolved_reports_measure.rb
+    - packs/admin/app/models/admin/account_action.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+    - packs/admin/spec/controllers/admin/statuses_controller_spec.rb
+    - packs/admin/spec/models/admin/account_action_spec.rb
+  "::ReportFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/reports_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/reports_controller.rb
+  "::ReportFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/reports_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::ReportNote":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/report_notes_controller.rb
+    - packs/admin/spec/controllers/admin/report_notes_controller_spec.rb
+  "::Request":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/system_check/media_privacy_check.rb
+  "::ResolveAccountService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/accounts_controller.rb
+    - packs/admin/spec/controllers/admin/accounts_controller_spec.rb
+  "::RoutingHelper":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/system_check/media_privacy_check.rb
+    - packs/admin/app/lib/admin/system_check/rules_check.rb
+  "::Rule":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/rules_controller.rb
+    - packs/admin/app/lib/admin/system_check/rules_check.rb
+  "::Setting":
+    violations:
+    - dependency
+    files:
+    - packs/admin/spec/controllers/admin/settings/branding_controller_spec.rb
+  "::SiteUpload":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/site_uploads_controller.rb
+    - packs/admin/app/lib/admin/metrics/dimension/space_usage_dimension.rb
+  "::Status":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/lib/admin/metrics/measure/instance_statuses_measure.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+    - packs/admin/app/models/admin/status_filter.rb
+  "::StatusTrend":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/statuses_controller.rb
+  "::Tag":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/dashboard_controller.rb
+    - packs/admin/app/controllers/admin/tags_controller.rb
+    - packs/admin/app/lib/admin/metrics/measure/tag_accounts_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/tag_servers_measure.rb
+    - packs/admin/app/lib/admin/metrics/measure/tag_uses_measure.rb
+    - packs/admin/spec/policies/admin/status_policy_spec.rb
+  "::TagManager":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/instances_controller.rb
+  "::Tombstone":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::Trends":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/api/v1/admin/trends/links_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/trends/statuses_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/trends/tags_controller.rb
+  "::Trends::PreviewCardBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links_controller.rb
+  "::Trends::PreviewCardFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links_controller.rb
+  "::Trends::PreviewCardFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::Trends::PreviewCardProviderBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links/preview_card_providers_controller.rb
+  "::Trends::PreviewCardProviderFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links/preview_card_providers_controller.rb
+  "::Trends::PreviewCardProviderFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/links/preview_card_providers_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::Trends::StatusBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/statuses_controller.rb
+  "::Trends::StatusFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/statuses_controller.rb
+  "::Trends::StatusFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/statuses_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::Trends::TagBatch":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/tags_controller.rb
+  "::Trends::TagFilter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/tags_controller.rb
+  "::Trends::TagFilter::KEYS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/trends/tags_controller.rb
+    - packs/admin/app/helpers/admin/filter_helper.rb
+  "::UnallowDomainService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/domain_allows_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/domain_allows_controller.rb
+    - packs/admin/spec/controllers/admin/domain_allows_controller_spec.rb
+  "::UnavailableDomain":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/instances_controller.rb
+  "::UnblockDomainService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/domain_blocks_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/domain_blocks_controller.rb
+    - packs/admin/spec/controllers/admin/domain_blocks_controller_spec.rb
+  "::UnpublishAnnouncementWorker":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/announcements_controller.rb
+  "::UpdateStatusService":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/models/admin/status_batch_action.rb
+  "::User":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/dashboard_controller.rb
+    - packs/admin/app/controllers/admin/users/roles_controller.rb
+    - packs/admin/app/controllers/admin/users/two_factor_authentications_controller.rb
+    - packs/admin/app/lib/admin/metrics/measure/new_users_measure.rb
+    - packs/admin/spec/controllers/admin/resets_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/accounts_controller_spec.rb
+  "::UserMailer":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/disputes/appeals_controller.rb
+    - packs/admin/app/controllers/admin/users/two_factor_authentications_controller.rb
+    - packs/admin/app/models/admin/account_action.rb
+    - packs/admin/app/models/admin/status_batch_action.rb
+    - packs/admin/spec/controllers/admin/change_emails_controller_spec.rb
+    - packs/admin/spec/controllers/admin/confirmations_controller_spec.rb
+    - packs/admin/spec/controllers/admin/disputes/appeals_controller_spec.rb
+  "::UserRole":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/roles_controller.rb
+    - packs/admin/app/controllers/api/v1/admin/accounts_controller.rb
+    - packs/admin/app/controllers/api/v2/admin/accounts_controller.rb
+    - packs/admin/spec/controllers/admin/account_actions_controller_spec.rb
+    - packs/admin/spec/controllers/admin/account_moderation_notes_controller_spec.rb
+    - packs/admin/spec/controllers/admin/accounts_controller_spec.rb
+    - packs/admin/spec/controllers/admin/action_logs_controller_spec.rb
+    - packs/admin/spec/controllers/admin/announcements_controller_spec.rb
+    - packs/admin/spec/controllers/admin/base_controller_spec.rb
+    - packs/admin/spec/controllers/admin/change_emails_controller_spec.rb
+    - packs/admin/spec/controllers/admin/confirmations_controller_spec.rb
+    - packs/admin/spec/controllers/admin/custom_emojis_controller_spec.rb
+    - packs/admin/spec/controllers/admin/dashboard_controller_spec.rb
+    - packs/admin/spec/controllers/admin/disputes/appeals_controller_spec.rb
+    - packs/admin/spec/controllers/admin/domain_allows_controller_spec.rb
+    - packs/admin/spec/controllers/admin/domain_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/admin/email_domain_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/admin/export_domain_allows_controller_spec.rb
+    - packs/admin/spec/controllers/admin/export_domain_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/admin/follow_recommendations_controller_spec.rb
+    - packs/admin/spec/controllers/admin/instances_controller_spec.rb
+    - packs/admin/spec/controllers/admin/invites_controller_spec.rb
+    - packs/admin/spec/controllers/admin/ip_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/admin/relationships_controller_spec.rb
+    - packs/admin/spec/controllers/admin/relays_controller_spec.rb
+    - packs/admin/spec/controllers/admin/report_notes_controller_spec.rb
+    - packs/admin/spec/controllers/admin/reports/actions_controller_spec.rb
+    - packs/admin/spec/controllers/admin/reports_controller_spec.rb
+    - packs/admin/spec/controllers/admin/resets_controller_spec.rb
+    - packs/admin/spec/controllers/admin/roles_controller_spec.rb
+    - packs/admin/spec/controllers/admin/rules_controller_spec.rb
+    - packs/admin/spec/controllers/admin/settings/about_controller_spec.rb
+    - packs/admin/spec/controllers/admin/settings/appearance_controller_spec.rb
+    - packs/admin/spec/controllers/admin/settings/branding_controller_spec.rb
+    - packs/admin/spec/controllers/admin/settings/content_retention_controller_spec.rb
+    - packs/admin/spec/controllers/admin/settings/discovery_controller_spec.rb
+    - packs/admin/spec/controllers/admin/settings/registrations_controller_spec.rb
+    - packs/admin/spec/controllers/admin/site_uploads_controller_spec.rb
+    - packs/admin/spec/controllers/admin/statuses_controller_spec.rb
+    - packs/admin/spec/controllers/admin/tags_controller_spec.rb
+    - packs/admin/spec/controllers/admin/trends/links/preview_card_providers_controller_spec.rb
+    - packs/admin/spec/controllers/admin/trends/links_controller_spec.rb
+    - packs/admin/spec/controllers/admin/trends/statuses_controller_spec.rb
+    - packs/admin/spec/controllers/admin/trends/tags_controller_spec.rb
+    - packs/admin/spec/controllers/admin/users/roles_controller_spec.rb
+    - packs/admin/spec/controllers/admin/users/two_factor_authentications_controller_spec.rb
+    - packs/admin/spec/controllers/admin/warning_presets_controller_spec.rb
+    - packs/admin/spec/controllers/admin/webhooks/secrets_controller_spec.rb
+    - packs/admin/spec/controllers/admin/webhooks_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/account_actions_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/accounts_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/canonical_email_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/dimensions_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/domain_allows_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/domain_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/email_domain_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/ip_blocks_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/measures_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/reports_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/retention_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/trends/links_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/trends/statuses_controller_spec.rb
+    - packs/admin/spec/controllers/api/v1/admin/trends/tags_controller_spec.rb
+    - packs/admin/spec/controllers/api/v2/admin/accounts_controller_spec.rb
+    - packs/admin/spec/models/admin/account_action_spec.rb
+    - packs/admin/spec/policies/admin/status_policy_spec.rb
+  "::UserRole::FLAGS":
+    violations:
+    - dependency
+    files:
+    - packs/admin/spec/controllers/admin/roles_controller_spec.rb
+    - packs/admin/spec/controllers/admin/users/roles_controller_spec.rb
+  "::UserRole::Flags::NONE":
+    violations:
+    - dependency
+    files:
+    - packs/admin/spec/controllers/admin/roles_controller_spec.rb
+  "::Webhook":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/controllers/admin/webhooks/secrets_controller.rb
+    - packs/admin/app/controllers/admin/webhooks_controller.rb
+package_todo.yml
+# This file contains a list of dependencies that are not part of the long term plan for the
+# '.' package.
+# We should generally work to reduce this list over time.
+#
+# You can regenerate this file using the following command:
+#
+# bin/packwerk update-todo
+---
+packs/user_facing_app:
+  "::AccessTokenExtension":
+    violations:
+    - dependency
+    files:
+    - config/application.rb
+  "::Account":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20170823162448_create_status_pins.rb
+    - db/migrate/20171116161857_create_list_accounts.rb
+    - db/migrate/20171119172437_create_admin_action_logs.rb
+    - db/migrate/20180628181026_create_custom_filters.rb
+    - db/migrate/20180808175627_create_account_pins.rb
+    - db/migrate/20180929222014_create_account_conversations.rb
+    - db/migrate/20181024224956_migrate_account_conversations.rb
+    - db/migrate/20181116165755_create_account_stats.rb
+    - db/migrate/20181116173541_copy_account_stats.rb
+    - db/migrate/20181213184704_create_account_warnings.rb
+    - db/migrate/20190103124649_create_scheduled_statuses.rb
+    - db/migrate/20190117114553_create_tombstones.rb
+    - db/migrate/20190225031541_create_polls.rb
+    - db/migrate/20190225031625_create_poll_votes.rb
+    - db/migrate/20190316190352_create_account_identity_proofs.rb
+    - db/migrate/20190914202517_create_account_migrations.rb
+    - db/migrate/20190915194355_create_account_aliases.rb
+    - db/migrate/20200113125135_create_announcement_mutes.rb
+    - db/migrate/20200114113335_create_announcement_reactions.rb
+    - db/migrate/20210722120340_create_account_statuses_cleanup_policies.rb
+    - db/migrate/20210908220918_create_status_edits.rb
+    - db/migrate/20220124141035_create_appeals.rb
+    - db/migrate/20220714171049_create_tag_follows.rb
+    - db/post_migrate/20201017234926_fill_account_suspension_origin.rb
+    - db/seeds/02_instance_actor.rb
+    - db/seeds/04_admin.rb
+    - lib/cli.rb
+    - lib/mastodon/accounts_cli.rb
+    - lib/mastodon/cache_cli.rb
+    - lib/mastodon/domains_cli.rb
+    - lib/mastodon/feeds_cli.rb
+    - lib/mastodon/media_cli.rb
+    - lib/mastodon/upgrade_cli.rb
+    - lib/tasks/tests.rake
+    - spec/mailers/previews/admin_mailer_preview.rb
+    - spec/mailers/previews/notification_mailer_preview.rb
+  "::AccountConversation":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/maintenance_cli.rb
+    - lib/tasks/tests.rake
+  "::AccountDeletionRequest":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/maintenance_cli.rb
+  "::AccountNote":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/maintenance_cli.rb
+  "::AccountWarning":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20220124141035_create_appeals.rb
+    - spec/mailers/previews/user_mailer_preview.rb
+  "::AccountsIndex":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/search_cli.rb
+  "::Admin::ActionLog":
+    violations:
+    - dependency
+    files:
+    - db/post_migrate/20221101190723_backfill_admin_action_logs.rb
+    - db/post_migrate/20221206114142_backfill_admin_action_logs_again.rb
+    - lib/tasks/tests.rake
+  "::AdminMailer":
+    violations:
+    - dependency
+    files:
+    - spec/mailers/previews/admin_mailer_preview.rb
+  "::Announcement":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20200113125135_create_announcement_mutes.rb
+    - db/migrate/20200114113335_create_announcement_reactions.rb
+  "::Appeal":
+    violations:
+    - dependency
+    files:
+    - spec/mailers/previews/admin_mailer_preview.rb
+    - spec/mailers/previews/user_mailer_preview.rb
+  "::ApplicationController":
+    violations:
+    - dependency
+    files:
+    - lib/tasks/assets.rake
+  "::ApplicationExtension":
+    violations:
+    - dependency
+    files:
+    - config/application.rb
+  "::ApplicationRecord":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20180528141303_fix_accounts_unique_index.rb
+    - db/migrate/20181024224956_migrate_account_conversations.rb
+    - db/migrate/20181026034033_remove_faux_remote_account_duplicates.rb
+    - db/migrate/20190511134027_add_silenced_at_suspended_at_to_accounts.rb
+    - db/migrate/20190715164535_add_instance_actor.rb
+    - db/migrate/20191007013357_update_pt_locales.rb
+    - db/migrate/20220304195405_migrate_hide_network_preference.rb
+    - db/migrate/20220316233212_update_kurdish_locales.rb
+    - db/migrate/20230215074423_move_user_settings.rb
+    - db/post_migrate/20190511152737_remove_suspended_silenced_account_fields.rb
+    - db/post_migrate/20210808071221_clear_orphaned_account_notes.rb
+    - db/post_migrate/20220429101850_clear_email_domain_blocks.rb
+    - db/post_migrate/20220617202502_migrate_roles.rb
+    - db/post_migrate/20220704024901_migrate_settings_to_user_roles.rb
+    - db/post_migrate/20221101190723_backfill_admin_action_logs.rb
+    - db/post_migrate/20221206114142_backfill_admin_action_logs_again.rb
+    - lib/mastodon/maintenance_cli.rb
+    - lib/mastodon/statuses_cli.rb
+  "::Backup":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/media_cli.rb
+    - spec/mailers/previews/user_mailer_preview.rb
+  "::BackupWorker":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/accounts_cli.rb
+  "::Block":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20180528141303_fix_accounts_unique_index.rb
+  "::BootstrapTimelineWorker":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/accounts_cli.rb
+  "::CanonicalEmailBlock":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/canonical_email_blocks_cli.rb
+  "::Conversation":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20180929222014_create_account_conversations.rb
+    - db/migrate/20181024224956_migrate_account_conversations.rb
+    - lib/mastodon/maintenance_cli.rb
+    - lib/mastodon/statuses_cli.rb
+  "::ConversationMute":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/maintenance_cli.rb
+  "::CustomEmoji":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20181207011115_downcase_custom_emoji_domains.rb
+    - db/migrate/20200114113335_create_announcement_reactions.rb
+    - lib/mastodon/domains_cli.rb
+    - lib/mastodon/emoji_cli.rb
+    - lib/mastodon/media_cli.rb
+    - lib/mastodon/upgrade_cli.rb
+  "::CustomEmojiCategory":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/emoji_cli.rb
+  "::CustomFilter":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20220613110628_create_custom_filter_keywords.rb
+    - db/migrate/20220808101323_create_custom_filter_statuses.rb
+  "::DeleteAccountService":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/accounts_cli.rb
+    - lib/mastodon/domains_cli.rb
+  "::DomainAllow":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/domains_cli.rb
+    - lib/mastodon/maintenance_cli.rb
+  "::DomainBlock":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/domains_cli.rb
+    - lib/mastodon/maintenance_cli.rb
+    - lib/mastodon/media_cli.rb
+  "::EmailDomainBlock":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/email_domain_blocks_cli.rb
+    - lib/mastodon/maintenance_cli.rb
+  "::Favourite":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20180528141303_fix_accounts_unique_index.rb
+    - spec/mailers/previews/notification_mailer_preview.rb
+  "::FeaturedTag":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20221021055441_add_index_featured_tags_on_account_id_and_tag_id.rb
+  "::FeedManager":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20170920032311_fix_reblogs_in_feeds.rb
+  "::Follow":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20171116161857_create_list_accounts.rb
+    - db/migrate/20180528141303_fix_accounts_unique_index.rb
+    - db/migrate/20180608213548_reject_following_blocked_users.rb
+    - lib/mastodon/accounts_cli.rb
+    - lib/mastodon/media_cli.rb
+    - spec/mailers/previews/notification_mailer_preview.rb
+  "::FollowRequest":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20180528141303_fix_accounts_unique_index.rb
+  "::FollowService":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/accounts_cli.rb
+  "::Import":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/media_cli.rb
+  "::Import::FILE_TYPES":
+    violations:
+    - dependency
+    files:
+    - config/initializers/paperclip.rb
+  "::Instance":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/domains_cli.rb
+  "::InstancePresenter":
+    violations:
+    - dependency
+    files:
+    - spec/views/statuses/show.html.haml_spec.rb
+  "::IpBlock":
+    violations:
+    - dependency
+    files:
+    - config/initializers/rack_attack.rb
+    - db/migrate/20221025171544_add_index_ip_blocks_on_ip.rb
+    - lib/mastodon/ip_blocks_cli.rb
+  "::LanguagesHelper::REGIONAL_LOCALE_NAMES":
+    violations:
+    - dependency
+    files:
+    - lib/tasks/repo.rake
+  "::LanguagesHelper::SUPPORTED_LOCALES":
+    violations:
+    - dependency
+    files:
+    - lib/tasks/repo.rake
+  "::List":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20171116161857_create_list_accounts.rb
+  "::Localized":
+    violations:
+    - dependency
+    files:
+    - config/application.rb
+  "::MediaAttachment":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20170105224407_add_shortcode_to_media_attachments.rb
+    - db/migrate/20170304202101_add_type_to_media_attachments.rb
+    - lib/mastodon/media_cli.rb
+    - lib/mastodon/statuses_cli.rb
+    - lib/mastodon/upgrade_cli.rb
+    - lib/paperclip/gif_transcoder.rb
+    - lib/paperclip/transcoder.rb
+  "::MediaAttachment::IMAGE_MIME_TYPES":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20170304202101_add_type_to_media_attachments.rb
+  "::MediaAttachment::VIDEO_MIME_TYPES":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20170304202101_add_type_to_media_attachments.rb
+  "::Mention":
+    violations:
+    - dependency
+    files:
+    - spec/mailers/previews/notification_mailer_preview.rb
+  "::MoveService":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/accounts_cli.rb
+  "::Mute":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20180528141303_fix_accounts_unique_index.rb
+  "::Notification":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20161203164520_add_from_account_id_to_notifications.rb
+    - db/post_migrate/20200917193528_migrate_notifications_type.rb
+    - spec/mailers/previews/notification_mailer_preview.rb
+  "::NotificationMailer":
+    violations:
+    - dependency
+    files:
+    - spec/mailers/previews/notification_mailer_preview.rb
+  "::Poll":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20190225031625_create_poll_votes.rb
+  "::PrecomputeFeedService":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/feeds_cli.rb
+  "::PreviewCard":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/media_cli.rb
+    - lib/mastodon/preview_cards_cli.rb
+    - lib/mastodon/upgrade_cli.rb
+    - spec/mailers/previews/admin_mailer_preview.rb
+  "::RedisConfiguration":
+    violations:
+    - dependency
+    files:
+    - config/initializers/stoplight.rb
+    - db/migrate/20170920032311_fix_reblogs_in_feeds.rb
+    - db/migrate/20200407202420_migrate_unavailable_inboxes.rb
+    - lib/chewy/strategy/mastodon.rb
+    - lib/mastodon/cli_helper.rb
+    - lib/mastodon/rack_middleware.rb
+    - lib/mastodon/sidekiq_middleware.rb
+  "::Redisable":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/feeds_cli.rb
+    - spec/rails_helper.rb
+  "::RemovalWorker":
+    violations:
+    - dependency
+    files:
+    - db/post_migrate/20190519130537_remove_boosts_widening_audience.rb
+  "::Request":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/accounts_cli.rb
+    - lib/mastodon/domains_cli.rb
+  "::ResolveAccountService":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/accounts_cli.rb
+  "::ResponseWithLimit":
+    violations:
+    - dependency
+    files:
+    - lib/paperclip/response_with_limit_adapter.rb
+  "::RoutingHelper":
+    violations:
+    - dependency
+    files:
+    - db/post_migrate/20221101190723_backfill_admin_action_logs.rb
+    - db/post_migrate/20221206114142_backfill_admin_action_logs_again.rb
+  "::SessionActivation":
+    violations:
+    - dependency
+    files:
+    - config/initializers/devise.rb
+    - spec/rails_helper.rb
+  "::Setting":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20190314181829_migrate_open_registrations_setting.rb
+    - db/migrate/20190529143559_preserve_old_layout_for_existing_users.rb
+    - db/migrate/20220304195405_migrate_hide_network_preference.rb
+    - db/post_migrate/20220704024901_migrate_settings_to_user_roles.rb
+    - lib/cli.rb
+    - lib/mastodon/settings_cli.rb
+    - lib/tasks/mastodon.rake
+    - spec/support/examples/lib/settings/scoped_settings.rb
+  "::SiteUpload":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/media_cli.rb
+  "::Status":
+    violations:
+    - dependency
+    files:
+    - config/environments/test.rb
+    - db/migrate/20161202132159_add_in_reply_to_account_id_to_statuses.rb
+    - db/migrate/20170209184350_add_reply_to_statuses.rb
+    - db/migrate/20170823162448_create_status_pins.rb
+    - db/migrate/20180812162710_create_status_stats.rb
+    - db/migrate/20180812173710_copy_status_stats.rb
+    - db/migrate/20181024224956_migrate_account_conversations.rb
+    - db/migrate/20190225031541_create_polls.rb
+    - db/migrate/20210908220918_create_status_edits.rb
+    - db/migrate/20220808101323_create_custom_filter_statuses.rb
+    - db/post_migrate/20190519130537_remove_boosts_widening_audience.rb
+    - lib/mastodon/cache_cli.rb
+    - lib/mastodon/statuses_cli.rb
+    - lib/tasks/tests.rake
+    - spec/mailers/previews/admin_mailer_preview.rb
+    - spec/mailers/previews/notification_mailer_preview.rb
+  "::StatusesIndex":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/search_cli.rb
+  "::Tag":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20181204215309_create_account_tag_stats.rb
+    - db/migrate/20190726175042_add_case_insensitive_index_to_tags.rb
+    - db/migrate/20220714171049_create_tag_follows.rb
+    - lib/mastodon/maintenance_cli.rb
+    - spec/mailers/previews/admin_mailer_preview.rb
+  "::TagManager":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/domains_cli.rb
+  "::TagsIndex":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/search_cli.rb
+  "::UnavailableDomain":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20200407202420_migrate_unavailable_inboxes.rb
+    - lib/mastodon/maintenance_cli.rb
+  "::UnfollowService":
+    violations:
+    - dependency
+    files:
+    - lib/mastodon/accounts_cli.rb
+  "::User":
+    violations:
+    - dependency
+    files:
+    - config/initializers/doorkeeper.rb
+    - db/migrate/20170920032311_fix_reblogs_in_feeds.rb
+    - db/migrate/20171125024930_create_invites.rb
+    - db/migrate/20180528141303_fix_accounts_unique_index.rb
+    - db/migrate/20190409054914_create_user_invite_requests.rb
+    - db/migrate/20190529143559_preserve_old_layout_for_existing_users.rb
+    - db/migrate/20210609202149_create_login_activities.rb
+    - db/seeds/04_admin.rb
+    - lib/mastodon/accounts_cli.rb
+    - lib/mastodon/feeds_cli.rb
+    - lib/tasks/mastodon.rake
+    - lib/tasks/tests.rake
+    - spec/features/log_in_spec.rb
+    - spec/mailers/previews/admin_mailer_preview.rb
+    - spec/mailers/previews/user_mailer_preview.rb
+  "::UserMailer":
+    violations:
+    - dependency
+    files:
+    - spec/mailers/previews/user_mailer_preview.rb
+  "::UserRole":
+    violations:
+    - dependency
+    files:
+    - db/seeds/03_roles.rb
+    - db/seeds/04_admin.rb
+    - lib/mastodon/accounts_cli.rb
+    - lib/tasks/mastodon.rake
+  "::UserRole::FLAGS":
+    violations:
+    - dependency
+    files:
+    - db/post_migrate/20220704024901_migrate_settings_to_user_roles.rb
+  "::VideoMetadataExtractor":
+    violations:
+    - dependency
+    files:
+    - lib/paperclip/transcoder.rb
+  "::Web::PushSubscription":
+    violations:
+    - dependency
+    files:
+    - db/migrate/20180609104432_migrate_web_push_subscriptions2.rb
+    - db/post_migrate/20190927124642_remove_invalid_web_push_subscription.rb
+    - spec/fabricators/web_push_subscription_fabricator.rb
+  "::WebauthnCredential":
+    violations:
+    - dependency
+    files:
+    - spec/mailers/previews/user_mailer_preview.rb
+    - spec/models/webauthn_credentials_spec.rb
+  "::Webhook::EVENTS":
+    violations:
+    - dependency
+    files:
+    - spec/fabricators/webhook_fabricator.rb
