@@ -40,11 +40,11 @@ RAILS_ENV=test NODE_ENV=tests ./bin/rails assets:precompile
 #
 # git checkout . && git clean -fd
 # 
-# ../mastodon-workshop/00.sh
-# ../mastodon-workshop/07.sh && bundle exec rspec > 00_log.txt
-# ../mastodon-workshop/01.sh && bundle exec rspec > 01_log.txt
-# ../mastodon-workshop/02.sh && bundle exec rspec > 02_log.txt
-# ../mastodon-workshop/03.sh && bundle exec rspec > 03_log.txt
-# ../mastodon-workshop/04.sh && bundle exec rspec > 04_log.txt
-# ../mastodon-workshop/05.sh && bundle exec rspec > 05_log.txt
-# ../mastodon-workshop/06.sh && bundle exec rspec > 06_log.txt
+# ../railsconf-workshop/00.sh
+# ../railsconf-workshop/07.sh && bundle exec rspec > 00_log.txt
+# ../railsconf-workshop/01.sh && bundle exec rspec > 01_log.txt
+# ../railsconf-workshop/02.sh && bundle exec rspec > 02_log.txt
+# ../railsconf-workshop/03.sh && bundle exec rspec > 03_log.txt
+# ../railsconf-workshop/04.sh && bundle exec rspec > 04_log.txt
+# ../railsconf-workshop/05.sh && bundle exec rspec > 05_log.txt
+# ../railsconf-workshop/06.sh && bundle exec rspec > 06_log.txt

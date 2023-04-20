@@ -1,4 +1,4 @@
-# mastodon-workshop
+# railsconf-workshop
 Ruby At Scale Workshop with Mastodon
 
 ## Prerequisites
@@ -14,10 +14,10 @@ Ruby At Scale Workshop with Mastodon
 
 cd YOUR_WORKSPACE
 git clone --depth=1 https://github.com/gradual-systems/mastodon.git
-git clone https://github.com/gradual-systems/mastodon-workshop.git
+git clone https://github.com/gradual-systems/railsconf-workshop.git
 
 pushd mastodon
-../mastodon-workshop/00.sh
+../railsconf-workshop/00.sh
 popd
 ```
 
@@ -26,7 +26,7 @@ Note that your repos will be next to each other on the filesystem:
 tree . -L 1
 .
 ├── mastodon
-└── mastodon-workshop
+└── railsconf-workshop
 ```
 
 ## During the workshop
