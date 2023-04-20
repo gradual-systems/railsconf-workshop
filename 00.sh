@@ -4,6 +4,7 @@ echo "Set up bare minimum for workshop. If you're interested in doing the advanc
 
 
 echo "
+source 'https://rubygems.org'
 gem 'packs-rails'
 
 gem 'use_packs', group: %w(development test)
