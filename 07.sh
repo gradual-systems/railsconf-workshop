@@ -32,4 +32,19 @@ RAILS_ENV=development ./bin/rails assets:precompile
 
 RAILS_ENV=test NODE_ENV=tests ./bin/rails assets:precompile
 
-bundle exec rspec
+
+# If this script passes, you are set up to run mastodon tests. If you would 
+# like to verify that all steps in the workshop lead to a green test suite 
+# for mastodon, you can run a series of steps as follows (outputting rspec
+# to files per step because the output gets kinda long)
+#
+# git checkout . && git clean -fd
+# 
+# ../mastodon-workshop/00.sh
+# ../mastodon-workshop/07.sh && bundle exec rspec > 00_log.txt
+# ../mastodon-workshop/01.sh && bundle exec rspec > 01_log.txt
+# ../mastodon-workshop/02.sh && bundle exec rspec > 02_log.txt
+# ../mastodon-workshop/03.sh && bundle exec rspec > 03_log.txt
+# ../mastodon-workshop/04.sh && bundle exec rspec > 04_log.txt
+# ../mastodon-workshop/05.sh && bundle exec rspec > 05_log.txt
+# ../mastodon-workshop/06.sh && bundle exec rspec > 06_log.txt
