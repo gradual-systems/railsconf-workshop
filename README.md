@@ -37,7 +37,8 @@ Note that your repos will be next to each other on the filesystem:
 tree . -L 1
 .
 ├── mastodon
-└── railsconf-workshop
+├── railsconf-workshop
+└── your_app
 ```
 
 ### Sign Up for Office Hours
